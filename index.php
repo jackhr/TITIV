@@ -66,5 +66,10 @@ include_once 'includes/header.php'
             slides.removeClass('active');
             $(slides[currentSlide]).addClass('active');
         }, 5000);
+
+        $('.book-now-container .main-btn').on('click', function() {
+            $('.booking-btns').removeClass('show');
+            $(this).siblings('.booking-btns').toggleClass('show');
+        })
     </script>
 <?php include_once 'includes/footer.php' ?>
