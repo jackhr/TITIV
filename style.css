@@ -117,11 +117,20 @@ form .submit-response { margin: 20px 0 5px }
 
 /* ========= Header ========== */
 
-header { position: relative; left: 0; top: 0; z-index: 1000; width: 100%; background: var(--red) }
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--red);
+    height: 50px;
+}
 header .section-inner-wrap {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
+    height: unset;
 }
 header nav {
     height: 100%;
@@ -334,6 +343,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     overflow: hidden;
     position: absolute;
     top: 0;
+    z-index: -1;
 }
 
 .slide {
@@ -354,7 +364,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 
 #intro {
     color: var(--white);
-    height: 80vh;
+    height: calc(100vh - 50px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -367,7 +377,6 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     backdrop-filter: blur(2px);
     border-radius: 8px;
     padding: 12px;
-    z-index: 1;
     background: #00000020;
 }
 
@@ -378,6 +387,27 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     letter-spacing: 1.3px;
 }
 
+#intro-chevron {
+    position: absolute;
+    bottom: 20px;
+    background: #00000040;
+}
+
+#intro-chevron svg {
+    width: 46px;
+    height: auto;
+    animation: oscillate 2s infinite ease-in;
+}
+
+@keyframes oscillate {
+    0%, 30%, 60%, 100% {
+      transform: translateY(0px);
+    }
+
+    15%, 45% {
+      transform: translateY(5px); /* Adjust the oscillation height as needed */
+    }
+  }
 
 
 
