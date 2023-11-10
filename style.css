@@ -45,8 +45,8 @@ hgroup h3 { padding: 10px 0 }
 .button.invert { color: var(--white); border-color: var(--white); }
 .button.invert:hover { color: var(--red); background: var(--white); }
 
-.button, nav a, label, h1, h2, h3, h4, h5, h6, .vehicle-select-car { font-family: var(--font-header), sans-serif }
-a, a img, i, button, header, header nav a span, .vehicle-select-car, .vehicle-select-car table td img, section.rental-form-section hgroup, .rental-form-section-content, section.rental-form-section { -webkit-transition: all 240ms; -moz-transition: all 240ms; -ms-transition: all 240ms; -o-transition: all 240ms; transition: all 240ms; }
+.button, nav a, label, h1, h2, h3, h4, h5, h6, .vehicle-select-car, .custom-dropdown { font-family: var(--font-header), sans-serif }
+a, a img, i, button, header, header nav a span, .vehicle-select-car, .vehicle-select-car table td img, section.rental-form-section hgroup, .rental-form-section-content, section.rental-form-section, .custom-dropdown span { -webkit-transition: all 240ms; -moz-transition: all 240ms; -ms-transition: all 240ms; -o-transition: all 240ms; transition: all 240ms; }
 
 
 
@@ -118,9 +118,16 @@ form .submit-response { margin: 20px 0 5px }
 /* ========= Header ========== */
 
 header { position: relative; left: 0; top: 0; z-index: 1000; width: 100%; background: var(--red) }
-header .section-inner-wrap { padding: 10px 0 }
+header .section-inner-wrap {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+header nav {
+    height: 100%;
+    display: flex;
+}
 header .logo { margin: 10px 0 3px; }
-header nav { position: absolute; right: 0; bottom: 20px; height: 100%; }
 header nav a { display: inline-block; height: 100%; margin-left: 30px; color: var(--white); text-shadow: 0 1px 3px var(--grey); }
 header nav a span { position: relative; top: 65%; }
 header nav a.current{ opacity: 1 }
@@ -128,7 +135,41 @@ header nav a.current span { border-bottom: 1px solid #FFF }
 
 header #mobile-menu { display: none; }
 
-
+.custom-dropdown {
+    color: var(--white);
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+}
+.custom-dropdown span {
+    text-shadow: 0 1px 3px var(--grey);
+    cursor: pointer;
+}
+.custom-dropdown span:hover {
+    opacity: 0.5;
+}
+.custom-dropdown span.current {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: max-content;
+    background-color: var(--red);
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    top: 45px;
+    gap: 12px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.dropdown-content.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 
 
 
