@@ -330,6 +330,25 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 
 
 
+#intro {
+    background: url('http://www.villaordnance.com/images/slideshows/homepage/image-villa-aerial-30171.jpg') center top no-repeat;
+    color: var(--white);
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#intro div.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#intro *:not(div.overlay) {
+    z-index: 1;
+}
 
 
 
