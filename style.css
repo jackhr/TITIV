@@ -409,6 +409,77 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     }
   }
 
+#villas {
+    padding: 90px 0;
+    background-color: var(--white);
+}
+#villas > h1 {
+    margin-bottom: 90px;
+}
+#villas-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+
+.villa {
+    border-radius: 8px;
+    background: var(--grey);
+    color: var(--white);
+    width: 420px;
+}
+.villa-title {
+    padding: 24px 0;
+    background: var(--red);
+    border-radius: 8px 8px 0 0;
+}
+.villa-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 200px;
+}
+.villa-img img {
+    width: 100%;
+}
+.villa-body {
+    display: flex;
+    justify-content: space-around;
+    margin: 24px 0;
+}
+.villa-icon-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.villa-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 0;
+}
+.main-btn {
+    background: var(--red);
+    border-radius: 6px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+}
+.main-btn.details {
+    background: var(--white);
+    color: var(--grey);
+}
+
+
 
 
 /* ========== Mobile ========== */
