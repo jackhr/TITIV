@@ -4,9 +4,9 @@ $page = "index";
 include_once 'includes/header.php'
 ?>
     <div id="intro">
-        <h1>Welcome to Titi Vacation Rentals</h1>
-        <p>Thank you for visiting our website.</p>
-        <div class="overlay"></div>
+        <div>
+            <p>Discover the charm of Antigua's southern hideaways with "Titi Vacation Homes," your gateway to an authentic Caribbean experience. Our collection features five cozy villas, primarily nestled in the laid-back ambiance of English Harbour.</p>
+        </div>
     </div>
     <div class="slideshow-container">
         <div class="slide active" style="background-image: url('http://www.villaordnance.com/images/slideshows/homepage/image-villa-aerial-30171.jpg');"></div>
