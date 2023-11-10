@@ -11,8 +11,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="style.css">
-	<link type="text/css" rel="stylesheet" href="js/datetimepicker/jquery.datetimepicker.css">
-	<link type="text/css" rel="stylesheet" href="js/validity/jquery.validity.css">
     <script src="js/jquery-1.8.2.min.js"></script>
 </head>
 <body id="<?php echo $page ?>-page">
@@ -46,6 +44,16 @@
 
     <script>
 
-        $(document).on('click', e => $('.dropdown-content').toggleClass('hidden', !$('.custom-dropdown').has(e.target).length));
+        $(document).on('click', e => {
+            if ($("#villa-toggle").is(e.target)) {
+                // If we are pressing the toggle, we want to toggle the dropdown
+                return $(".dropdown-content").toggleClass('hidden');
+            }
 
+            if (!$('.dropdown-content').has(e.target).length && !$('.dropdown-content').is(e.target)) {
+                // if we are not clicking on the dropdown or any of its children, we want to hide it
+                $('.dropdown-content').addClass('hidden');
+            }
+        });
+        
     </script>
