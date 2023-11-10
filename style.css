@@ -478,6 +478,51 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     background: var(--white);
     color: var(--grey);
 }
+.book-now-container {
+    position: relative;
+}
+.booking-btns {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all ease 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    bottom: 0;
+    background: var(--red);
+    padding: 12px;
+    border-radius: 8px;
+}
+.booking-btns.show {
+    opacity: 1;
+    pointer-events: all;
+    bottom: 50px;
+}
+.booking-btn {
+    display: flex;
+    background: var(--white);
+    border-radius: 6px;
+    padding: 6px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 230px;
+}
+.booking-btn.booking-dot-com {
+    color: #0c3b7c;
+}
+.booking-btn.airbnb {
+    color: #ea5b62;
+}
+.booking-btn img {
+    max-width: 45px;
+    max-height: 45px;
+}
+.booking-btn span {
+    margin: auto;
+}
 
 
 
