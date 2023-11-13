@@ -7,6 +7,7 @@
 	--grey: #333;
 	--font-body: 'Poppins';
 	--font-header: 'Agbalumo';
+    --nav-height: 78px;
 }
 
 * { margin: 0; padding: 0; }
@@ -124,7 +125,7 @@ header {
     z-index: 1000;
     width: 100%;
     background: var(--red);
-    height: 78px;
+    height: var(--nav-height);
     display: flex;
     align-items: center;
 }
@@ -372,7 +373,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 
 #intro {
     color: var(--white);
-    height: calc(100vh - 50px);
+    height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
     justify-content: center;
