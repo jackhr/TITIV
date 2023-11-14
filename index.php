@@ -4,9 +4,14 @@ $page = "index";
 include_once 'includes/header.php'
 ?>
     <div class="slideshow-container">
-        <div class="slide active" style="background-image: url('http://www.villaordnance.com/images/slideshows/homepage/image-villa-aerial-30171.jpg');"></div>
-        <div class="slide" style="background-image: url('http://www.villaordnance.com/images/galleries/villa-ordnance/TITI-VillaOrd-PoolToSea-1903JMR3999.jpg');"></div>
-        <div class="slide" style="background-image: url('http://www.villaordnance.com/images/galleries/villa-ordnance/TITI-VillaOrd-DiningExt-1903JMR3712.jpg');"></div>
+        <div style="background-image: url('assets/AIR03-TITI-VillaOrd-Aerial-1903JMR30152.jpg');" class="slide active"></div>
+        <div style="background-image: url('assets/AIR09-TITI-VillaOrd-Aerial-1903JMR30062.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL01-TITI-CasaChiesa-FrontVerandah-1812JMR2260-Edit.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL06-TITI-CasaChiesa-LivingRoom-1812JMR2037-Edit.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL08-TITI-VillaOrd-DiningExt-1903JMR3759.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL10-TITI-VillaOrd-LivingArea-1903JMR3840.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL18-TITI-CasaChiesa-Air-1812JMR0003-Edit.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/CL18-TITI-VillaOrd-BedGuest3-1903JMR3825.jpg');" class="slide" ></div>
     </div>
     <div id="villas">
         <h1>Titi Vacation Homes</h1>
