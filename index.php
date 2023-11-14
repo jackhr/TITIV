@@ -70,9 +70,14 @@ include_once 'includes/header.php'
             $(slides[currentSlide]).addClass('active');
         }, 5000);
 
-        $('.book-now-container .main-btn').on('click', function() {
-            $('.booking-btns').removeClass('show');
-            $(this).siblings('.booking-btns').toggleClass('show');
-        })
+        // This function hides all $('.booking-btns') unless the click was on a $('.main-btn') or within a $('.booking-btns')
+        $(document).on('click', function(e) {
+            if ($(e.target).closest('.main-btn').length) {
+                $('.booking-btns').removeClass('show');
+                $(e.target).closest('.main-btn').siblings('.booking-btns').toggleClass('show');
+            } else if (!$(e.target).closest('.booking-btns').length) {
+                $('.booking-btns').removeClass('show');
+            }
+        });
     </script>
 <?php include_once 'includes/footer.php' ?>
