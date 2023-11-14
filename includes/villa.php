@@ -30,7 +30,7 @@ $ba_s = $baths == 1 ? '' : 's';
             <div class="main-btn">Book Now</div>
             <div class="booking-btns">
                 <div class="booking-btn booking-dot-com">
-                    <img src="https://yt3.ggpht.com/a/AGF-l7-lxyYHCtf0rFgYIdrbPcwuc0oBabPNg4MClg=s900-c-k-c0xffffffff-no-rj-mo" alt="Booking.com logo">
+                    <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
                     <span>Booking.com</span>
                 </div>
                 <div class="booking-btn airbnb">
