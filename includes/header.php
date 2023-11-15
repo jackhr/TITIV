@@ -27,11 +27,17 @@
                 <div class="custom-dropdown">
                     <span id="villa-toggle" class="<?php if($page=='index') echo 'current' ?>">Villas</span>
                     <div class="dropdown-content hidden">
-                        <span class="dropdown-item">Villa Ordnance</span>
-                        <span class="dropdown-item">Litle Rock Cottage</span>
-                        <span class="dropdown-item">Goat Rock Studio</span>
-                        <span class="dropdown-item">Goat Hill Studio</span>
-                        <span class="dropdown-item">Casa Chiesa</span>
+                        <?php
+                        $villas_query = "SELECT name FROM villas;";
+                        $result = mysqli_query($con, $villas_query);
+                        $villas = [];
+                        
+                        while($villa = mysqli_fetch_assoc($result)) $villas[] = $villa;
+
+                        foreach($villas as $villa) {
+                            echo "<a class='dropdown-item' href='show.php?villa={$villa['name']}'>{$villa['name']}</a>";
+                        }
+                        ?>
                     </div>
                 </div>
 				<a class="<?php if($page=='information') echo 'current' ?>" href="general-info.php"><span>General Inforamtion</span></a>

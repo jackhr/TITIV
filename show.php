@@ -1,8 +1,8 @@
 <?php
+include_once 'includes/header.php';
 $villa = $_GET['villa'];
 $title = "Titi Vacation Homes - $villa";
 $page = "show";
-include_once 'includes/header.php';
 
 $villa_query = "SELECT * FROM villas WHERE name = '$villa';";
 $result = mysqli_query($con, $villa_query);
