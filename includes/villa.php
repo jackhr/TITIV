@@ -26,22 +26,22 @@ $ba_s = $baths == 1 ? '' : 's';
         </div>
     </div>
     <div class="villa-footer">
+        <div class="booking-btns">
+            <?php if (!is_null($booking_dot_com_link)) { ?>
+                <a href="<?php echo $booking_dot_com_link; ?>" class="booking-btn booking-dot-com">
+                    <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
+                    <span>Booking.com</span>
+                </a>
+            <?php } ?>
+            <?php if (!is_null($air_bnb_link)) { ?>
+            <a href="<?php echo $air_bnb_link; ?>" class="booking-btn airbnb">
+                <img src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" alt="Airbnb logo">
+                <span>Airbnb</span>
+            </a>
+            <?php } ?>
+        </div>
         <div class="book-now-container">
             <div class="main-btn">Book Now</div>
-            <div class="booking-btns">
-                <?php if (!is_null($booking_dot_com_link)) { ?>
-                    <a href="<?php echo $booking_dot_com_link; ?>" class="booking-btn booking-dot-com">
-                        <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
-                        <span>Booking.com</span>
-                    </a>
-                <?php } ?>
-                <?php if (!is_null($air_bnb_link)) { ?>
-                <a href="<?php echo $air_bnb_link; ?>" class="booking-btn airbnb">
-                    <img src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" alt="Airbnb logo">
-                    <span>Airbnb</span>
-                </a>
-                <?php } ?>
-            </div>
         </div>
         <div class="main-btn details">Details</div>
     </div>

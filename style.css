@@ -388,7 +388,6 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 48px;
 }
 
 .villa {
@@ -396,6 +395,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     background: var(--grey);
     color: var(--white);
     width: 420px;
+    margin: 24px;
 }
 .villa-title {
     padding: 24px 0;
@@ -430,6 +430,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     justify-content: center;
     gap: 32px;
     padding: 16px 0 24px;
+    position: relative;
 }
 .main-btn {
     background: var(--red);
@@ -459,14 +460,16 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     opacity: 0;
     pointer-events: none;
     bottom: 0;
-    background: var(--red);
+    background: var(--grey);
     padding: 12px;
     border-radius: 8px;
+    box-shadow: 0 0 13px 9px rgba(0,0,0,0.3);
+    z-index: 20;
 }
 .booking-btns.show {
     opacity: 1;
     pointer-events: all;
-    bottom: 50px;
+    bottom: 80px;
 }
 .booking-btn {
     display: flex;
@@ -474,9 +477,9 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     border-radius: 6px;
     padding: 6px;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    width: 230px;
+    width: 190px;
 }
 .booking-btn.booking-dot-com {
     color: #0c3b7c;
@@ -485,8 +488,8 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     color: #ea5b62;
 }
 .booking-btn img {
-    max-width: 45px;
-    max-height: 45px;
+    max-width: 40px;
+    max-height: 40px;
 }
 .booking-btn span {
     margin: auto;

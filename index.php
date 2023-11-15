@@ -75,12 +75,12 @@ include_once 'includes/header.php'
             $(slides[currentSlide]).addClass('active');
         }, 5000);
 
-        // This function hides all $('.booking-btns') unless the click was on a $('.main-btn') or within a $('.booking-btns')
+        // This function hides all $('.booking-btns') unless the click was on a $('.book-now-container') or within a $('.booking-btns')
         $(document).on('click', function(e) {
-            if ($(e.target).closest('.main-btn').length) {
+            if ($(e.target).closest('.book-now-container').length) {
                 $('.booking-btns').removeClass('show');
-                $(e.target).closest('.main-btn').siblings('.booking-btns').toggleClass('show');
-            } else if (!$(e.target).closest('.booking-btns').length) {
+                $(e.target).closest('.villa-footer').find('.booking-btns').toggleClass('show');
+            } else if (!$(e.target).closest('.book-now-container').length) {
                 $('.booking-btns').removeClass('show');
             }
         });
