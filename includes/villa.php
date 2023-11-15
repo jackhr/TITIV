@@ -2,7 +2,16 @@
 $g_s = $guests == 1 ? '' : 's';
 $be_s = $beds == 1 ? '' : 's';
 $ba_s = $baths == 1 ? '' : 's';
-$prepend = str_replace(' ', '_', $title)
+$directory = str_replace(' ', '_', $title);
+$img_src_arr = [];
+
+$villa_directory_files = scandir("assets/$directory/compressed/1500px/");
+
+foreach($villa_directory_files as $idx => $file) {
+    if ($file == '.' || $file == '..') continue;
+    $img_src_arr[] = $file;
+}
+
 ?>
 
 
@@ -19,7 +28,7 @@ $prepend = str_replace(' ', '_', $title)
             <?php
             foreach($img_src_arr as $idx => $img_src) {
                 $class = $idx == 0 ? 'active' : '';
-                echo "<img data-idx='$idx' src='assets/$prepend/compressed/1500px/$img_src.jpg' class='$class' />";
+                echo "<img data-idx='$idx' src='assets/$directory/compressed/1500px/$img_src' class='$class' />";
             }
             ?>
         </div>

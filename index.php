@@ -30,7 +30,6 @@ include_once 'includes/header.php'
             $guests = 8;
             $beds = 5;
             $baths = 4;
-            $img_src_arr = [ "aerial-1", "aerial-2", "aerial-3", "dining-exterior", "guest-bedroom", "living-area" ];
             include('includes/villa.php');
             
             $title = "Casa Chiesa";
@@ -39,7 +38,6 @@ include_once 'includes/header.php'
             $guests = 6;
             $beds = 3;
             $baths = 4.5;
-            $img_src_arr = [ "front-veranda", "living-room", "pool" ];
             include('includes/villa.php');
             
             $title = "Little Rock Cottage";
@@ -48,7 +46,6 @@ include_once 'includes/header.php'
             $guests = 3;
             $beds = 2;
             $baths = 1;
-            $img_src_arr = [ "bedroom", "living-area", "pool-area" ];
             include('includes/villa.php');
             
             $title = "Goat Rock Studio";
@@ -57,7 +54,6 @@ include_once 'includes/header.php'
             $guests = 2;
             $beds = 1;
             $baths = 1;
-            $img_src_arr = [ "interior", "pool-area" ];
             include('includes/villa.php');
             
             $title = "Goat Hill Studio";
@@ -66,7 +62,6 @@ include_once 'includes/header.php'
             $guests = 2;
             $beds = 1;
             $baths = 1;
-            $img_src_arr = [ "interior", "pool-area" ];
             include('includes/villa.php');
             ?>
         </div>
