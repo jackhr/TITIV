@@ -105,7 +105,7 @@ while($villa = mysqli_fetch_assoc($result)) $villas[$villa['slug']] = $villa;
                         <div class="book-now-container">
                             <div class="main-btn">Book Now</div>
                         </div>
-                        <div class="main-btn details">Details</div>
+                        <a href="show.php?villa=<?php echo $villa['name']; ?>" class="main-btn details">Details</a>
                     </div>
                 </div>
             <?php } ?>
