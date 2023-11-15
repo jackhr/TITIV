@@ -431,6 +431,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     height: 32px;
     width: 32px;
     cursor: pointer;
+    transition: all ease-in-out 0.5s;
 }
 .villa-img-arrow.disabled {
     background: #a8a8a8;

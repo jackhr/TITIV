@@ -17,7 +17,11 @@ $prepend = str_replace(' ', '_', $title)
         </div>
         <div class="villa-img-inner">
             <?php
-            foreach($img_src_arr as $img_src) echo "<img src=\"/assets/$prepend/$img_src.jpg\">"; ?>
+            foreach($img_src_arr as $idx => $img_src) {
+                $class = $idx == 0 ? 'active' : '';
+                echo "<img data-idx='$idx' src='/assets/$prepend/$img_src.jpg' class='$class' />";
+            }
+            ?>
         </div>
         <div class="villa-img-arrow next">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">

@@ -16,8 +16,8 @@ include_once 'includes/header.php'
         <div style="background-image: url('assets/Little_Rock_Cottage/bedroom.jpg');" class="slide"></div>
         <div style="background-image: url('assets/Little_Rock_Cottage/living-area.jpg');" class="slide"></div>
         <div style="background-image: url('assets/Little_Rock_Cottage/pool-area.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Studios/interior.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Studios/pool-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Rock_Studio/interior.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Rock_Studio/pool-area.jpg');" class="slide"></div>
     </div>
     <div id="villas">
         <h1>Titi Vacation Homes</h1>
@@ -72,13 +72,19 @@ include_once 'includes/header.php'
         </div>
     </div>
     <script>
+
+        const STATE = {
+            currentSlide: 0,
+            panelWidth: $('.villa').width()
+        }
+
         let currentSlide = 0;
         const slides = $('.slide');
 
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
+            STATE.currentSlide = (STATE.currentSlide + 1) % slides.length;
             slides.removeClass('active');
-            $(slides[currentSlide]).addClass('active');
+            $(slides[STATE.currentSlide]).addClass('active');
         }, 5000);
 
         // This function hides all $('.booking-btns') unless the click was on a $('.book-now-container') or within a $('.booking-btns')
@@ -88,6 +94,36 @@ include_once 'includes/header.php'
                 $(e.target).closest('.villa-footer').find('.booking-btns').toggleClass('show');
             } else if (!$(e.target).closest('.book-now-container').length) {
                 $('.booking-btns').removeClass('show');
+            }
+        });
+
+        $(".villa-img-arrow").off('click').on('click', function() {
+            if ($(this).hasClass('disabled')) return;
+            const carousel = $(this).siblings('.villa-img-inner');
+            const activeImg = carousel.find('img.active');
+            
+            if ($(this).hasClass('next')) {
+                const factor = activeImg.data('idx') * STATE.panelWidth;
+                if (activeImg.next().length) {
+                    activeImg.next().addClass('active');
+                    activeImg.removeClass('active');
+                }
+                if (!activeImg.next().next().length) {
+                    $(this).addClass('disabled');
+                }
+                carousel.css('transform', `translateX(${(factor + STATE.panelWidth) * -1}px)`);
+                $(this).siblings('.prev').removeClass('disabled');
+            } else {
+                const factor = (activeImg.data('idx') - 1) * STATE.panelWidth;
+                if (activeImg.prev().length) {
+                    activeImg.prev().addClass('active');
+                    activeImg.removeClass('active');
+                }
+                if (!activeImg.prev().prev().length) {
+                    $(this).addClass('disabled');
+                }
+                carousel.css('transform', `translateX(${factor * -1}px)`);
+                $(this).siblings('.next').removeClass('disabled');
             }
         });
     </script>
