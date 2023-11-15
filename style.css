@@ -399,15 +399,16 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 }
 .villa-title {
     padding: 24px 0;
-    background: var(--red);
+    background: var(--grey);
     border-radius: 8px 8px 0 0;
+    font-size: 1.75em;
 }
 .villa-img {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 200px;
+    height: 240px;
 }
 .villa-img img {
     width: 100%;
@@ -415,7 +416,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 .villa-body {
     display: flex;
     justify-content: space-around;
-    margin: 24px 0;
+    padding: 24px 0 16px;
 }
 .villa-icon-pair {
     display: flex;
@@ -428,7 +429,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     align-items: center;
     justify-content: center;
     gap: 32px;
-    padding: 24px 0;
+    padding: 16px 0 24px;
 }
 .main-btn {
     background: var(--red);
