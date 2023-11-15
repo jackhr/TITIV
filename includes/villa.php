@@ -19,7 +19,7 @@ $prepend = str_replace(' ', '_', $title)
             <?php
             foreach($img_src_arr as $idx => $img_src) {
                 $class = $idx == 0 ? 'active' : '';
-                echo "<img data-idx='$idx' src='/assets/$prepend/$img_src.jpg' class='$class' />";
+                echo "<img data-idx='$idx' src='/assets/$prepend/compressed/1500px/$img_src.jpg' class='$class' />";
             }
             ?>
         </div>

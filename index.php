@@ -4,20 +4,20 @@ $page = "index";
 include_once 'includes/header.php'
 ?>
     <div class="slideshow-container">
-        <div style="background-image: url('assets/Villa_Ordnance/aerial-1.jpg');" class="slide active"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/aerial-2.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/aerial-3.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/dining-exterior.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/guest-bedroom.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/living-area.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/front-veranda.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/living-room.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/pool.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/bedroom.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/living-area.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/pool-area.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Rock_Studio/interior.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Rock_Studio/pool-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-1.jpg');" class="slide active"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-2.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-3.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/dining-exterior.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/guest-bedroom.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/living-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/front-veranda.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/living-room.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/pool.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/bedroom.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/living-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/pool-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Rock_Studio/compressed/3000px/interior.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Rock_Studio/compressed/3000px/pool-area.jpg');" class="slide"></div>
     </div>
     <div id="villas">
         <h1>Titi Vacation Homes</h1>
