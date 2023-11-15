@@ -4,14 +4,20 @@ $page = "index";
 include_once 'includes/header.php'
 ?>
     <div class="slideshow-container">
-        <div style="background-image: url('assets/AIR03-TITI-VillaOrd-Aerial-1903JMR30152.jpg');" class="slide active"></div>
-        <div style="background-image: url('assets/AIR09-TITI-VillaOrd-Aerial-1903JMR30062.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL01-TITI-CasaChiesa-FrontVerandah-1812JMR2260-Edit.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL06-TITI-CasaChiesa-LivingRoom-1812JMR2037-Edit.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL08-TITI-VillaOrd-DiningExt-1903JMR3759.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL10-TITI-VillaOrd-LivingArea-1903JMR3840.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL18-TITI-CasaChiesa-Air-1812JMR0003-Edit.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/CL18-TITI-VillaOrd-BedGuest3-1903JMR3825.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/Villa_Ordnance/aerial-1.jpg');" class="slide active"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/aerial-2.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/aerial-3.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/dining-exterior.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/guest-bedroom.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Villa_Ordnance/living-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/front-veranda.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/living-room.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Casa_Chiesa/pool.jpg');" class="slide" ></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/bedroom.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/living-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Little_Rock_Cottage/pool-area.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Studios/interior.jpg');" class="slide"></div>
+        <div style="background-image: url('assets/Goat_Studios/pool-area.jpg');" class="slide"></div>
     </div>
     <div id="villas">
         <h1>Titi Vacation Homes</h1>
@@ -19,48 +25,48 @@ include_once 'includes/header.php'
         <div id="villas-container">
             <?php
             $title = "Villa Ordnance";
-            $img_src = "http://www.villaordnance.com/images/galleries/villa-ordnance/TITI-VillaOrd-Aerial-1903JMR30171.jpg";
             $booking_dot_com_link = "https://www.booking.com/hotel/ag/villa-ordnance-english-harbour.en-gb.html";
             $air_bnb_link = "https://www.airbnb.com/rooms/820907538275321428";
             $guests = 8;
             $beds = 5;
             $baths = 4;
+            $img_src_arr = [ "aerial-1", "aerial-2", "aerial-3", "dining-exterior", "guest-bedroom", "living-area" ];
             include('includes/villa.php');
             
             $title = "Casa Chiesa";
-            $img_src = "http://www.villaordnance.com/images/galleries/casa-chiesa/TITI-CasaChiesa-06Pool-1812JMR2231.jpg";
             $booking_dot_com_link = "https://www.booking.com/hotel/ag/villa-ordnance-st-pauls.html";
             $air_bnb_link = "https://www.airbnb.com/rooms/827778182019020646";
             $guests = 6;
             $beds = 3;
             $baths = 4.5;
+            $img_src_arr = [ "front-veranda", "living-room", "pool" ];
             include('includes/villa.php');
             
             $title = "Little Rock Cottage";
-            $img_src = "http://www.villaordnance.com/images/galleries/little-rock/TTIT-LittleRock-PoolArea-1910JMR23810.jpg";
             $booking_dot_com_link = "https://www.booking.com/hotel/ag/little-rock-cottage-piccadilly.html";
             $air_bnb_link = "https://www.airbnb.com/rooms/828124397400578980";
             $guests = 3;
             $beds = 2;
             $baths = 1;
+            $img_src_arr = [ "bedroom", "living-area", "pool-area" ];
             include('includes/villa.php');
             
             $title = "Goat Rock Studio";
-            $img_src = "https://a0.muscache.com/im/pictures/miso/Hosting-834245096444883583/original/50bd6155-7c70-412f-9ceb-f78c26b0111f.jpeg?aki_policy=large";
             $booking_dot_com_link = "https://www.booking.com/hotel/ag/little-rock-cottage-piccadilly1.html";
             $air_bnb_link = "https://www.airbnb.com/rooms/834245096444883583";
             $guests = 2;
             $beds = 1;
             $baths = 1;
+            $img_src_arr = [ "interior", "pool-area" ];
             include('includes/villa.php');
             
             $title = "Goat Hill Studio";
-            $img_src = "https://a0.muscache.com/im/pictures/miso/Hosting-837292377895370898/original/09d281bb-f90b-4e4e-817b-636f1b71d068.jpeg?aki_policy=large";
             $booking_dot_com_link = "https://www.booking.com/hotel/ag/little-rock-cottage-piccadilly1.html";
             $air_bnb_link = "https://www.airbnb.com/rooms/837292377895370898";
             $guests = 2;
             $beds = 1;
             $baths = 1;
+            $img_src_arr = [ "interior", "pool-area" ];
             include('includes/villa.php');
             ?>
         </div>

@@ -2,6 +2,7 @@
 $g_s = $guests == 1 ? '' : 's';
 $be_s = $beds == 1 ? '' : 's';
 $ba_s = $baths == 1 ? '' : 's';
+$prepend = str_replace(' ', '_', $title)
 ?>
 
 
@@ -9,7 +10,20 @@ $ba_s = $baths == 1 ? '' : 's';
 <div class="villa">
     <h2 class="villa-title"><?php echo $title?></h2>
     <div class="villa-img">
-        <img src="<?php echo $img_src?>">
+        <div  class="villa-img-arrow prev disabled">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+        </div>
+        <div class="villa-img-inner">
+            <?php
+            foreach($img_src_arr as $img_src) echo "<img src=\"/assets/$prepend/$img_src.jpg\">"; ?>
+        </div>
+        <div class="villa-img-arrow next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                <path d="m9 18 6-6-6-6"/>
+            </svg>
+        </div>
     </div>
     <div class="villa-body">
         <div class="villa-icon-pair">

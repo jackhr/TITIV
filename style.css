@@ -9,6 +9,7 @@
 	--font-header: 'Agbalumo';
     --nav-height: 78px;
     --intro-height: 80vh;
+    --villa-width: 420px;
 }
 
 * { margin: 0; padding: 0; }
@@ -394,7 +395,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     border-radius: 8px;
     background: var(--grey);
     color: var(--white);
-    width: 420px;
+    width: var(--villa-width);
     margin: 24px;
 }
 .villa-title {
@@ -404,14 +405,45 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     font-size: 1.75em;
 }
 .villa-img {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
     height: 240px;
 }
+.villa-img-inner {
+    position: relative;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    transition: all ease-in-out 1s;
+    transform: translateX(0px);
+}
+.villa-img-arrow {
+    position: absolute;
+    background: var(--white);
+    color: var(--grey);
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+.villa-img-arrow.disabled {
+    background: #a8a8a8;
+    cursor: default;
+}
+.villa-img-arrow.prev {
+    left: 12px;
+}
+.villa-img-arrow.next {
+    right: 12px;
+}
 .villa-img img {
-    width: 100%;
+    width: var(--villa-width);
 }
 .villa-body {
     display: flex;
