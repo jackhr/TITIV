@@ -4,9 +4,15 @@ $villa = $_GET['villa'];
 $title = "Titi Vacation Homes - $villa";
 $page = "show";
 
-$villa_query = "SELECT * FROM villas WHERE name = '$villa';";
-$result = mysqli_query($con, $villa_query);
-$villa = mysqli_fetch_assoc($result);
+if ($prod) {
+    $villa_query = "SELECT * FROM villas WHERE name = '$villa';";
+    $result = mysqli_query($con, $villa_query);
+    $villa = mysqli_fetch_assoc($result);
+} else {
+    include_once 'includes/fake_villas.php';
+
+    $villa = $villas[$villa];
+}
 ?>
 
 <h1><?php echo $villa['name']; ?></h1>

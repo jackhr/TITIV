@@ -3,11 +3,15 @@ $title = "Titi Vacation Homes";
 $page = "index";
 include_once 'includes/header.php';
 
-$villas_query = "SELECT * FROM villas;";
-$result = mysqli_query($con, $villas_query);
-$villas = [];
-
-while($villa = mysqli_fetch_assoc($result)) $villas[$villa['slug']] = $villa;
+if ($prod) {
+    $villas_query = "SELECT * FROM villas;";
+    $result = mysqli_query($con, $villas_query);
+    $villas = [];
+    
+    while($villa = mysqli_fetch_assoc($result)) $villas[$villa['slug']] = $villa;
+} else {
+    include_once 'includes/fake_villas.php';
+}
 ?>
     <div class="slideshow-container">
         <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-1.jpg');" class="slide active"></div>

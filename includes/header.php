@@ -28,16 +28,23 @@
                     <span id="villa-toggle" class="<?php if($page=='index') echo 'current' ?>">Villas</span>
                     <div class="dropdown-content hidden">
                         <?php
-                        $villas_query = "SELECT name FROM villas;";
-                        $result = mysqli_query($con, $villas_query);
-                        $villas = [];
-                        
-                        while($villa = mysqli_fetch_assoc($result)) $villas[] = $villa;
-
-                        foreach($villas as $villa) {
-                            echo "<a class='dropdown-item' href='show.php?villa={$villa['name']}'>{$villa['name']}</a>";
-                        }
-                        ?>
+                        if ($prod) {
+                            $villas_query = "SELECT name FROM villas;";
+                            $result = mysqli_query($con, $villas_query);
+                            $villas = [];
+                            
+                            while($villa = mysqli_fetch_assoc($result)) $villas[] = $villa;
+    
+                            foreach($villas as $villa) {
+                                echo "<a class='dropdown-item' href='show.php?villa={$villa['name']}'>{$villa['name']}</a>";
+                            }
+                        } else { ?>
+                            <a class='dropdown-item' href='show.php?villa=Villa Ordnance'>Villa Ordnance</a>
+                            <a class='dropdown-item' href='show.php?villa=Casa Chiesa'>Casa Chiesa</a>
+                            <a class='dropdown-item' href='show.php?villa=Little Rock Cottage'>Little Rock Cottage</a>
+                            <a class='dropdown-item' href='show.php?villa=Goat Hill Studio'>Goat Hill Studio</a>
+                            <a class='dropdown-item' href='show.php?villa=Goat Rock Studio'>Goat Rock Studio</a>
+                        <?php } ?>
                     </div>
                 </div>
 				<a class="<?php if($page=='information') echo 'current' ?>" href="general-info.php"><span>General Inforamtion</span></a>
