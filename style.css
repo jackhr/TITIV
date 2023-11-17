@@ -10,6 +10,9 @@
     --nav-height: 78px;
     --intro-height: 80vh;
     --villa-width: 420px;
+    --carousel-height: 450px;
+    --carousel-img-width: 620px;
+    --carousel-img-gap: 20px;
 }
 
 * { margin: 0; padding: 0; }
@@ -404,6 +407,9 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     background: var(--grey);
     border-radius: 8px 8px 0 0;
     font-size: 1.75em;
+    font-family: var(--font-body);
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
 }
 .villa-img {
     position: relative;
@@ -529,6 +535,69 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     margin: auto;
 }
 
+#show-page {
+    background-color: var(--white);
+}
+
+#show-carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: var(--carousel-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+#carousel-img-count {
+    background: rgba(255,255,255,0.7);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 50;
+    bottom: 12px;
+    right: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#show-carousel-container .villa-img-arrow {
+    background: var(--red);
+    color: var(--white);
+}
+.show-carousel-img {
+    position: absolute;
+    display: none;
+    transition: left ease-in-out 0.75s;
+    align-items: center;
+    justify-content: center;
+    height: var(--carousel-height);
+    width: var(--carousel-img-width);
+    overflow: hidden;
+}
+.show-carousel-img.active {
+    display: flex;
+}
+.show-carousel-img.left_2 {
+    left: calc(50% - ((var(--carousel-img-width) * 2) + (var(--carousel-img-width) / 2) + (var(--carousel-img-gap) * 2)));
+}
+.show-carousel-img.left {
+    left: calc(50% - (var(--carousel-img-width) + (var(--carousel-img-width) / 2) + var(--carousel-img-gap)));
+}
+.show-carousel-img.middle {
+    left: calc(50% - (var(--carousel-img-width) / 2));
+}
+.show-carousel-img.right {
+    left: calc(50% + ((var(--carousel-img-width) / 2) + var(--carousel-img-gap)));
+}
+.show-carousel-img.right_2 {
+    left: calc(50% + (var(--carousel-img-width) + (var(--carousel-img-width) / 2) + (var(--carousel-img-gap) * 2)));
+}
+.show-carousel-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 

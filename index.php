@@ -40,6 +40,7 @@ if ($prod) {
                 $baths = $villa['baths'];
                 $booking_dot_com_link = $villa['booking_dot_com_link'];
                 $air_bnb_link = $villa['air_bnb_link'];
+                $slug = $prod ? $slug : $villa['slug'];
 
                 $g_s = $guests == 1 ? '' : 's';
                 $be_s = $beds == 1 ? '' : 's';
