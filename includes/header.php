@@ -33,11 +33,9 @@
                             $result = mysqli_query($con, $villas_query);
                             $villas = [];
                             
-                            while($villa = mysqli_fetch_assoc($result)) $villas[] = $villa;
+                            while($v = mysqli_fetch_assoc($result)) $villas[] = $v;
     
-                            foreach($villas as $villa) {
-                                echo "<a class='dropdown-item' href='show.php?villa={$villa['name']}'>{$villa['name']}</a>";
-                            }
+                            foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'>{$v['name']}</a>";
                         } else { ?>
                             <a class='dropdown-item' href='show.php?villa=Villa Ordnance'>Villa Ordnance</a>
                             <a class='dropdown-item' href='show.php?villa=Casa Chiesa'>Casa Chiesa</a>
