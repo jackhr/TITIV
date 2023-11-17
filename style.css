@@ -613,6 +613,12 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     gap: 6px;
     font-size: 18px;
 }
+#details .first-four {
+    display: flex;
+    margin-top: 32px;
+    align-items: center;
+    justify-content: space-around;
+}
 
 
 
