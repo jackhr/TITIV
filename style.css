@@ -534,11 +534,9 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 .booking-btn span {
     margin: auto;
 }
-
 #show-page {
     background-color: var(--white);
 }
-
 #show-carousel-container {
     position: relative;
     overflow: hidden;
@@ -567,16 +565,18 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 }
 .show-carousel-img {
     position: absolute;
-    display: none;
+    opacity: 0;
     transition: left ease-in-out 0.75s;
     align-items: center;
     justify-content: center;
     height: var(--carousel-height);
     width: var(--carousel-img-width);
     overflow: hidden;
+    cursor: pointer;
 }
 .show-carousel-img.active {
     display: flex;
+    opacity: 1;
 }
 .show-carousel-img.left_2 {
     left: calc(50% - ((var(--carousel-img-width) * 2) + (var(--carousel-img-width) / 2) + (var(--carousel-img-gap) * 2)));

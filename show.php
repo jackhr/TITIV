@@ -47,8 +47,6 @@ foreach($villa_directory_files as $idx => $file) {
             ";
         }
         ?>
-        <!-- <div class="show-carousel-inner">
-        </div> -->
         <div class="villa-img-arrow next">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
                 <path d="m9 18 6-6-6-6"/>
@@ -56,5 +54,51 @@ foreach($villa_directory_files as $idx => $file) {
         </div>
     </div>
     <h1><?php echo $villa['name']; ?></h1>
+
+
+    <script>
+        $("#show-carousel-container .villa-img-arrow").on('click', function() {
+            if ($('#show-carousel-container').hasClass('sliding')) return;
+            $('#show-carousel-container').addClass('sliding');
+            const goingRight = $(this).hasClass('next');
+            // Get all image containers
+            const left_2 = $("#show-carousel-container .left_2");
+            const left = $("#show-carousel-container .left");
+            const middle = $("#show-carousel-container .middle");
+            const right = $("#show-carousel-container .right");
+            const right_2 = $("#show-carousel-container .right_2");
+            // Remove Classes
+            left_2.removeClass('left_2');
+            left.removeClass('left');
+            middle.removeClass('middle');
+            right.removeClass('right');
+            right_2.removeClass('right_2');
+            // Assign new classes
+            if (goingRight) {
+                left_2.removeClass('active');
+                left.addClass('left_2');
+                middle.addClass('left');
+                right.addClass('middle');
+                right_2.addClass('right');
+                if (right_2.next('.show-carousel-img').length) {
+                    right_2.next('.show-carousel-img').addClass('right_2 active');
+                } else {
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('right_2 active');
+                }
+            } else {
+                right_2.removeClass('active');
+                right.addClass('right_2');
+                middle.addClass('right');
+                left.addClass('middle');
+                left_2.addClass('left');
+                if (left_2.prev('.show-carousel-img').length) {
+                    left_2.prev('.show-carousel-img').addClass('left_2 active');
+                } else {
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('left_2 active');
+                }
+            }
+            setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
+        });
+    </script>
 
 <?php include_once 'includes/footer.php' ?>
