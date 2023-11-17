@@ -19,7 +19,7 @@ $slug = $villa['slug'];
 $villa_directory_files = scandir("assets/$slug/compressed/1500px/");
 
 foreach($villa_directory_files as $idx => $file) {
-    if ($file == '.' || $file == '..') continue;
+    if ($file[0] == '.') continue;
     $img_src_arr[] = $file;
 }
 
