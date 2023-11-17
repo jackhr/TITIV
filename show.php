@@ -9,10 +9,19 @@ if ($prod) {
     $villa_query = "SELECT * FROM villas WHERE name = '$villa';";
     $result = mysqli_query($con, $villa_query);
     $villa = mysqli_fetch_assoc($result);
+    
+    $minimum_stays_query = "SELECT * FROM minimum_stays WHERE villa_id = {$villa['id']};";
+    $result = mysqli_query($con, $minimum_stays_query);
+    while($row = mysqli_fetch_assoc($result)) $villa['minimum_stays'][] = $row;
 } else {
     include_once 'includes/fake_villas.php';
 
     $villa = $villas[$villa];
+    foreach($minimum_stays as $idx => $stay) {
+        if ($stay['villa_id'] == $villa['id']) {
+            $villa['minimum_stays'][] = $stay;
+        }
+    }
 }
 
 $img_src_arr = [];
@@ -86,10 +95,37 @@ foreach($villa_directory_files as $idx => $file) {
         </div>
         <div class="policies">
             <h2>Policies</h2>
-            <p><?php
-            $policies = str_replace("\\r\\n", "<br><br>", $villa['policies']);
-            echo $policies;
-            ?></p>
+            <ul>
+                <?php
+                $policies = explode("<br>", $villa['policies']);
+                foreach($policies as $policy) echo "<li>$policy</li>";
+                ?>
+            </ul>
+        </div>
+        <div class="pricing">
+            <h2>Pricing</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dates</th>
+                        <th>Cost ($USD)</th>
+                        <th>Minimum Stay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach($villa['minimum_stays'] as $idx => $stay) {
+                        echo "
+                            <tr>
+                                <td>$stay[dates]</td>
+                                <td>$$stay[cost]</td>
+                                <td>$stay[minimum] nights</td>
+                            </tr>
+                        ";
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </main>
 
