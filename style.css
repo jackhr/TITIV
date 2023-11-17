@@ -619,7 +619,15 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     align-items: center;
     justify-content: space-around;
 }
-
+#details .policies {
+    margin-top: 48px;
+}
+#details .policies h2 {
+    margin-bottom: 12px;
+}
+#details .policies p {
+    text-align: left;
+}
 
 
 /* ========== Mobile ========== */

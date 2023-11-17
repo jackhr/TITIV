@@ -84,6 +84,13 @@ foreach($villa_directory_files as $idx => $file) {
                 <span><?php echo $villa['sq_foot']; ?> sq ft</span>
             </div>
         </div>
+        <div class="policies">
+            <h2>Policies</h2>
+            <p><?php
+            $policies = str_replace("\\r\\n", "<br><br>", $villa['policies']);
+            echo $policies;
+            ?></p>
+        </div>
     </main>
 
 
