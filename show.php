@@ -36,7 +36,7 @@ foreach($villa_directory_files as $idx => $file) {
 ?>
 
     <div id="show-carousel-container">
-        <div id="carousel-img-count">View <?php echo count($img_src_arr); ?> photos</div>
+        <div id="carousel-img-count" onclick="$('html').addClass('viewing')">View <?php echo count($img_src_arr); ?> photos</div>
         <div  class="villa-img-arrow prev">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
                 <path d="m15 18-6-6 6-6"/>
@@ -51,7 +51,7 @@ foreach($villa_directory_files as $idx => $file) {
             if ($idx == 1) $class = 'active right';
             if ($idx == 2) $class = 'active right_2';
             echo "
-                <div class='show-carousel-img $class'>
+                <div class='show-carousel-img $class' onclick=\"$('html').addClass('viewing');\">
                     <img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' />
                 </div>
             ";
@@ -130,7 +130,65 @@ foreach($villa_directory_files as $idx => $file) {
     </main>
 
 
+    <div id="image-gallery">
+        <div class="close gallery-btn" onclick="$('html').removeClass('viewing')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                <path d="M18 6 6 18"/>
+                <path d="m6 6 12 12"/>
+            </svg>
+        </div>
+        <div  class="gallery-btn villa-img-arrow prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+        </div>
+        <?php
+        foreach($img_src_arr as $idx => $img_src) {
+            $class = $idx == 0 ? 'active' : '';
+            echo '
+                <div class="gallery-img-container '.$class.'">
+                    <img src="assets/'.$slug.'/compressed/3000px/'.$img_src.'" />
+                </div>
+            ';
+        }
+        ?>
+        <div class="gallery-btn villa-img-arrow next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+                <path d="m9 18 6-6-6-6"/>
+            </svg>
+        </div>
+    </div>
+
     <script>
+
+        $("#image-gallery .villa-img-arrow").on('click', function() {
+            if($('#image-gallery').hasClass('sliding')) return;
+            $("#image-gallery").addClass('sliding');
+            if ($(this).hasClass('next')) {
+                const active = $("#image-gallery .gallery-img-container.active");
+                const next = active.next('.gallery-img-container');
+                if (next.length) {
+                    active.removeClass('active');
+                    next.addClass('active');
+                } else {
+                    active.removeClass('active');
+                    $('.gallery-img-container').first('.gallery-img-container').addClass('active');
+                }
+            } else {
+                const active = $("#image-gallery .gallery-img-container.active");
+                const prev = active.prev('.gallery-img-container');
+                if (prev.length) {
+                    active.removeClass('active');
+                    prev.addClass('active');
+                } else {
+                    active.removeClass('active');
+                    $('.gallery-img-container').last('.gallery-img-container').addClass('active');
+                }
+            }
+
+            setTimeout(() => $('#image-gallery').removeClass('sliding'), 510);
+        });
+        
         $("#show-carousel-container .villa-img-arrow").on('click', function() {
             if ($('#show-carousel-container').hasClass('sliding')) return;
             $('#show-carousel-container').addClass('sliding');
@@ -173,6 +231,26 @@ foreach($villa_directory_files as $idx => $file) {
             }
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
         });
+
+        // function setUpImageGallery()  {
+        //     const imageGallery = $(`
+        //         <div id="image-gallery">
+        //             foreach($img_src_arr as $idx => $img_src) {
+        //                 $class = $idx == 0 ? 'active' : '';
+        //                 echo '
+        //                     <div class="gallery-img-container '.$class.'">
+        //                         <img src="assets/'.$slug.'/compressed/3000px/'.$img_src.'" />
+        //                     </div>
+        //                 ';
+        //             }
+        //         </div>
+        //     `);
+
+        //     $('body').append(imageGallery);
+            
+        // }
+
+        
     </script>
 
 <?php include_once 'includes/footer.php' ?>
