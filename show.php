@@ -51,7 +51,7 @@ foreach($villa_directory_files as $idx => $file) {
             if ($idx == 1) $class = 'active right';
             if ($idx == 2) $class = 'active right_2';
             echo "
-                <div class='show-carousel-img $class' onclick=\"$('html').addClass('viewing');\">
+                <div class='show-carousel-img $class'>
                     <img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' />
                 </div>
             ";
@@ -146,7 +146,7 @@ foreach($villa_directory_files as $idx => $file) {
         foreach($img_src_arr as $idx => $img_src) {
             $class = $idx == 0 ? 'active' : '';
             echo '
-                <div class="gallery-img-container '.$class.'">
+                <div data-idx="'.$idx.'" class="gallery-img-container '.$class.'">
                     <img src="assets/'.$slug.'/compressed/3000px/'.$img_src.'" />
                 </div>
             ';
@@ -187,6 +187,13 @@ foreach($villa_directory_files as $idx => $file) {
             }
 
             setTimeout(() => $('#image-gallery').removeClass('sliding'), 510);
+        });
+
+        $(".show-carousel-img").on('click', function() {
+            const idx = $(this).find('img').data('idx');
+            $("#image-gallery .gallery-img-container.active").removeClass('active');
+            $("#image-gallery .gallery-img-container").eq(idx).addClass('active');
+            $('html').addClass('viewing');
         });
         
         $("#show-carousel-container .villa-img-arrow").on('click', function() {
