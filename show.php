@@ -36,7 +36,7 @@ foreach($villa_directory_files as $idx => $file) {
 ?>
 
     <div id="show-carousel-container">
-        <div id="carousel-img-count" onclick="$('html').addClass('viewing')">View <?php echo count($img_src_arr); ?> photos</div>
+        <div id="carousel-img-count">View <?php echo count($img_src_arr); ?> photos</div>
         <div  class="villa-img-arrow prev">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
                 <path d="m15 18-6-6 6-6"/>
@@ -157,9 +157,30 @@ foreach($villa_directory_files as $idx => $file) {
                 <path d="m9 18 6-6-6-6"/>
             </svg>
         </div>
+        <div id="current-img-num">
+            <span>1</span>/<?php echo count($img_src_arr); ?>
+        </div>
     </div>
 
     <script>
+
+        function updateCurrentImgNum() {
+            const idx = $("#image-gallery .gallery-img-container.active").data('idx');
+            $("#current-img-num span").text(idx + 1);
+        }
+
+        function openGallery() {
+            $('html').addClass('viewing');
+            updateCurrentImgNum();
+        }
+
+        $("#carousel-img-count").on('click', function() {
+            const active = $("#show-carousel-container .show-carousel-img.active");
+            const idx = active.find('img').data('idx');
+            $("#image-gallery .gallery-img-container.active").removeClass('active');
+            $("#image-gallery .gallery-img-container").eq(idx).addClass('active');
+            openGallery();
+        });
 
         $("#image-gallery .villa-img-arrow").on('click', function() {
             if($('#image-gallery').hasClass('sliding')) return;
@@ -186,6 +207,7 @@ foreach($villa_directory_files as $idx => $file) {
                 }
             }
 
+            updateCurrentImgNum();
             setTimeout(() => $('#image-gallery').removeClass('sliding'), 510);
         });
 
@@ -193,7 +215,7 @@ foreach($villa_directory_files as $idx => $file) {
             const idx = $(this).find('img').data('idx');
             $("#image-gallery .gallery-img-container.active").removeClass('active');
             $("#image-gallery .gallery-img-container").eq(idx).addClass('active');
-            $('html').addClass('viewing');
+            openGallery();
         });
         
         $("#show-carousel-container .villa-img-arrow").on('click', function() {
@@ -239,25 +261,6 @@ foreach($villa_directory_files as $idx => $file) {
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
         });
 
-        // function setUpImageGallery()  {
-        //     const imageGallery = $(`
-        //         <div id="image-gallery">
-        //             foreach($img_src_arr as $idx => $img_src) {
-        //                 $class = $idx == 0 ? 'active' : '';
-        //                 echo '
-        //                     <div class="gallery-img-container '.$class.'">
-        //                         <img src="assets/'.$slug.'/compressed/3000px/'.$img_src.'" />
-        //                     </div>
-        //                 ';
-        //             }
-        //         </div>
-        //     `);
-
-        //     $('body').append(imageGallery);
-            
-        // }
-
-        
     </script>
 
 <?php include_once 'includes/footer.php' ?>

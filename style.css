@@ -741,6 +741,20 @@ html.viewing #image-gallery .gallery-img-container.active {
     height: 100%;
     object-fit: contain;
 }
+#current-img-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    opacity: 0.75;
+    padding: 10px 21px;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
 
 
 
