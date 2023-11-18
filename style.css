@@ -578,6 +578,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 .show-carousel-img.active {
     display: flex;
     opacity: 1;
+    z-index: 10;
 }
 .show-carousel-img.left_2 {
     left: calc(50% - ((var(--carousel-img-width) * 2) + (var(--carousel-img-width) / 2) + (var(--carousel-img-gap) * 2)));
@@ -682,6 +683,15 @@ html.viewing #image-gallery {
     opacity: 1;
     pointer-events: all;
 }
+#show-page .villa-img-arrow, #show-page .gallery-btn {
+    height: 50px;
+    width: 50px;
+    z-index: 20;
+}
+#show-page .villa-img-arrow svg, #show-page .gallery-btn svg {
+    height: 70%;
+    width: 70%;
+}
 #image-gallery .gallery-btn {
     position: absolute;
     background: var(--white);
@@ -690,9 +700,6 @@ html.viewing #image-gallery {
     justify-content: center;
     cursor: pointer;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    z-index: 20;
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
 }
@@ -710,10 +717,6 @@ html.viewing #image-gallery {
     width: 40px;
     top: 24px;
     right: 24px;
-}
-#image-gallery .gallery-btn svg {
-    height: 70%;
-    width: 70%;
 }
 .gallery-img-container {
     max-height: calc(100vh - (var(--gallery-padding) * 2));
