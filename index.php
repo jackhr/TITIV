@@ -49,11 +49,6 @@ if ($prod) {
                 $img_src_arr = [];
                 $villa_directory_files = scandir("assets/$slug/compressed/1500px/");
 
-                foreach($villa_directory_files as $idx => $file) {
-                    if ($file == '.' || $file == '..') continue;
-                    $img_src_arr[] = $file;
-                }
-
                 ?>
 
                 <div class="villa">
@@ -66,10 +61,11 @@ if ($prod) {
                         </div>
                         <div class="villa-img-inner">
                             <?php
-                            foreach($img_src_arr as $idx => $img_src) {
-                                $class = $idx == 0 ? 'active' : '';
-                                echo "<img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' class='$class' />";
-                            }
+                            echo "
+                            <img data-idx='0' src='assets/$slug/compressed/1500px/{$villa['img_slug_1']}.jpg' class='active' />
+                            <img data-idx='1' src='assets/$slug/compressed/1500px/{$villa['img_slug_2']}.jpg' />
+                            <img data-idx='2' src='assets/$slug/compressed/1500px/{$villa['img_slug_3']}.jpg' />
+                            ";
                             ?>
                         </div>
                         <div class="villa-img-arrow next">
