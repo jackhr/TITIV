@@ -118,8 +118,8 @@ foreach($villa_directory_files as $idx => $file) {
                         echo "
                             <tr>
                                 <td>$stay[dates]</td>
-                                <td>$$stay[cost]</td>
-                                <td>$stay[minimum] nights</td>
+                                <td>$$stay[cost] p/n</td>
+                                <td>$stay[minimum]</td>
                             </tr>
                         ";
                     }
