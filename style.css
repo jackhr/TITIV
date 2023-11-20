@@ -6,7 +6,7 @@
 	--red: #E72D3A;
 	--grey: #333;
 	--font-body: 'Poppins';
-	--font-header: 'Agbalumo';
+	--font-header: 'Poppins';
     --nav-height: 78px;
     --intro-height: 80vh;
     --villa-width: 420px;
@@ -55,7 +55,10 @@ hgroup h3 { padding: 10px 0 }
 .button, nav a, label, h1, h2, h3, h4, h5, h6, .vehicle-select-car, .custom-dropdown { font-family: var(--font-header), sans-serif }
 a, a img, i, button, header, header nav a span, .vehicle-select-car, .vehicle-select-car table td img, section.rental-form-section hgroup, .rental-form-section-content, section.rental-form-section, .custom-dropdown span { -webkit-transition: all 240ms; -moz-transition: all 240ms; -ms-transition: all 240ms; -o-transition: all 240ms; transition: all 240ms; }
 
-
+header,
+footer {
+    font-size: 13pt;
+}
 
 
 
@@ -605,9 +608,10 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     background: var(--red);
     color: var(--white);
     border-radius: 6px;
-    padding: 6px 12px;
+    padding: 12px 24px;
     cursor: pointer;
-    font-size: 14px;
+    margin: 24px auto 0;
+    font-size: 16px;
 }
 #details {
     padding: 32px;
@@ -617,14 +621,17 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 #details .header {
     text-align: left;
 }
-#details .header h1 {
+/* #details h1,
+#details h2 {
     width: max-content;
-}
+} */
 #details .header .sub-header-container {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 18px;
+    margin: auto;
+    width: max-content;
 }
 #details .first-four {
     display: flex;
@@ -635,7 +642,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 .details-separator {
     width: 100%;
     border-top: solid 2px rgba(0,0,0,0.15);
-    margin: 75px 0;
+    margin: 50px 0;
 }
 #details .policies li {
     margin: 12px 0;
@@ -908,7 +915,35 @@ html.viewing-ammenities {
     width: 18px;
     height: 18px;
 }
-
+.book-now {
+    display: flex;
+    justify-content: center;
+    gap: 58px;
+}
+.book-now a {
+    background: var(--red);
+    color: var(--white) !important;
+}
+.book-now a.airbnb img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(163%) hue-rotate(164deg) brightness(117%) contrast(96%);
+}
+#details .name-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+#details .header .book-now {
+    gap: 24px;
+    height: fit-content;
+}
+#details .header .book-now a {
+    font-size: 16px;
+    width: 150px;
+}
+#details .header .book-now img {
+    max-width: 30px;
+    max-height: 30px;
+}
 
 
 /* ========== Mobile ========== */
