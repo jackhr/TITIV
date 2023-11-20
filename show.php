@@ -105,8 +105,6 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 </svg>
                 <a href="<?php echo $villa['address_link']; ?>" target="_blank"><?php echo $villa['address']; ?></a>
                 <span>•</span>
-                <div class="all-ammenities" onclick="$('.ammenities.modal').addClass('show');$('html').addClass('viewing-ammenities');">Show All <?php echo count($villa_ammenities); ?> Amenities</div>
-                <span>•</span>
                 <div class="villa-icon-pair share" onclick="$('.share.modal').addClass('show');">
                     <?php echo $svg_lookup['share']; ?>
                     <span>Share</span>
@@ -131,8 +129,10 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 <span><?php echo $villa['baths']; ?> Bathrooms</span>
             </div>
         </div>
+        <div class="all-ammenities" onclick="$('.ammenities.modal').addClass('show');$('html').addClass('viewing-ammenities');">Show All <?php echo count($villa_ammenities); ?> Amenities</div>
         <div class="details-separator"></div>
         <div class="policies">
+            <h2>Useful Information</h2>
             <ul>
                 <?php
                 $policies = explode("<br>", $villa['policies']);
@@ -142,6 +142,7 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         </div>
         <div class="details-separator"></div>
         <div class="pricing">
+            <h2 onclick="$('#test').toggle()">Pricing</h2>
             <table>
                 <thead>
                     <tr>
@@ -165,6 +166,19 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 </tbody>
             </table>
         </div>
+        <div class="details-separator"></div>
+        <h2 id="test">Book Now</h2>
+        <div class="book-now">
+            <a href="<?php echo $villa['booking_dot_com_link']; ?>" class="booking-btn booking-dot-com">
+                <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
+                <span>Booking.com</span>
+            </a>
+            <a href="<?php echo $villa['air_bnb_link']; ?>" class="booking-btn airbnb">
+                <img src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" alt="Airbnb logo">
+                <span>Airbnb</span>
+            </a>
+        </div>
+        <div class="details-separator"></div>
     </main>
 
     <div id="image-gallery">
