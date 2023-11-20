@@ -13,6 +13,23 @@ if ($prod) {
     $minimum_stays_query = "SELECT * FROM minimum_stays WHERE villa_id = {$villa['id']};";
     $result = mysqli_query($con, $minimum_stays_query);
     while($row = mysqli_fetch_assoc($result)) $villa['minimum_stays'][] = $row;
+
+    $ammenities_query = "SELECT * FROM ammenities JOIN villas_ammenities ON ammenities.id = villas_ammenities.ammenity_id WHERE villas_ammenities.villa_id = {$villa['id']};";
+    $result = mysqli_query($con, $ammenities_query);
+    while($row = mysqli_fetch_assoc($result)) $villa_ammenities[$row['id']] = $row;
+
+    $query = "SELECT * FROM ammenity_types;";
+    $result = mysqli_query($con, $query);
+    $ammenity_types = [];
+    
+    while($row = mysqli_fetch_assoc($result)) $ammenity_types[$row['id']] = $row;
+
+    $final_types = [];
+    
+    foreach($villa_ammenities as $id => $ammenity) {
+        $final_types[$ammenity['type_id']]['name'] = $ammenity_types[$ammenity['type_id']]['name'];
+        $final_types[$ammenity['type_id']]['ammenities'][] = $ammenity;
+    }
 } else {
     include_once 'includes/fake_villas.php';
 
@@ -76,7 +93,9 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 </svg>
                 <a href="<?php echo $villa['address_link']; ?>" target="_blank"><?php echo $villa['address']; ?></a>
                 <span>•</span>
-                <div class="villa-icon-pair share" onclick="$('#share-modal').addClass('show');">
+                <div class="all-ammenities" onclick="$('.ammenities.modal').addClass('show');$('html').addClass('viewing-ammenities');">Show All <?php echo count($villa_ammenities); ?> Amenities</div>
+                <span>•</span>
+                <div class="villa-icon-pair share" onclick="$('.share.modal').addClass('show');">
                     <?php echo $villa_svg_lookup['share']; ?>
                     <span>Share</span>
                 </div>
@@ -100,8 +119,8 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 <span><?php echo $villa['baths']; ?> Bathrooms</span>
             </div>
         </div>
+        <div class="details-separator"></div>
         <div class="policies">
-            <h2>Policies</h2>
             <ul>
                 <?php
                 $policies = explode("<br>", $villa['policies']);
@@ -109,8 +128,8 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 ?>
             </ul>
         </div>
+        <div class="details-separator"></div>
         <div class="pricing">
-            <h2>Pricing</h2>
             <table>
                 <thead>
                     <tr>
@@ -168,17 +187,17 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         </div>
     </div>
 
-    <div id="share-modal">
-        <div id="share-modal-content">
-            <div id="close-share" onclick="$('#share-modal').removeClass('show')"><?php echo $villa_svg_lookup['close']; ?></div>
-            <div id="share-modal-header">
+    <div class="modal share">
+        <div class="modal-content">
+            <div class="modal-close"><?php echo $villa_svg_lookup['close']; ?></div>
+            <div class="modal-header">
                 <img src="assets/<?php echo $slug; ?>/compressed/1500px/<?php echo $villa['img_slug_1']; ?>.jpg">
                 <div>
                     <h1><?php echo $villa['name']; ?></h1>
                     <span><?php echo $villa['address']; ?></span>
                 </div>
             </div>
-            <div id="share-modal-body">
+            <div class="modal-body">
                 <div class="share-btn copy" data-link="<?php echo $link; ?>">
                     <?php echo $villa_svg_lookup['copy']; ?>
                     <span>Copy Link</span>
@@ -191,7 +210,38 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         </div>
     </div>
 
+    <div class="modal ammenities">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-close"><?php echo $villa_svg_lookup['close']; ?></div>
+                <h1>All Ammenities (<?php echo count($villa_ammenities); ?>)</h1>
+            </div>
+            <div class="modal-body">
+                <?php foreach($final_types as $id => $type) { ?>
+                    <div class='ammenity-type'>
+                        <h1><?php echo $type['name']; ?></h1>
+                        <div class='ammenities-container'>
+                            <?php foreach($type['ammenities'] as $ammenity) {
+                                echo "
+                                <div class='villa-icon-pair'>
+                                    {$villa_svg_lookup['bathtub']}
+                                    <span data-id='{$ammenity['id']}'>{$ammenity['name']}</span>
+                                </div>
+                                ";
+                            } ?>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+        $(".modal-close").on('click', function() {
+            $(this).closest('.modal').removeClass('show');
+            $('html').removeClass('viewing-ammenities');
+        });
 
         $(".share-btn.copy").on('click', function() {
             const link = $(this).data('link');
@@ -301,8 +351,11 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
         });
 
-        $("#share-modal").on('click', function(e) {
-            if (e.target.id == 'share-modal') $(this).removeClass('show');
+        $(".modal").on('click', function(e) {
+            if ($(e.target).hasClass('modal')) {
+                $(this).removeClass('show');
+                $('html').removeClass('viewing-ammenities');
+            }
         });
 
     </script>
