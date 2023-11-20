@@ -82,15 +82,15 @@ foreach($villa_directory_files as $idx => $file) {
             </div>
             <div class="villa-icon-pair">
                 <?php echo $villa_svg_lookup['beds']; ?>
+                <span><?php echo $villa['bedrooms']; ?> Bedroom<?php echo $villa['bedrooms'] > 1 ? 's' : ''; ?></span>
+            </div>
+            <div class="villa-icon-pair">
+                <?php echo $villa_svg_lookup['beds']; ?>
                 <span><?php echo $villa['beds']; ?> Beds</span>
             </div>
             <div class="villa-icon-pair">
                 <?php echo $villa_svg_lookup['baths']; ?>
                 <span><?php echo $villa['baths']; ?> Bathrooms</span>
-            </div>
-            <div class="villa-icon-pair">
-                <?php echo $villa_svg_lookup['sq_foot']; ?>
-                <span><?php echo $villa['sq_foot']; ?> sq ft</span>
             </div>
         </div>
         <div class="policies">
