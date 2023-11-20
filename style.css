@@ -869,6 +869,7 @@ html.viewing-ammenities {
     display: flex;
     flex-wrap: wrap;
     gap: 32px 42px;
+    justify-content: center;
 }
 .share-btn {
     background: var(--grey);
