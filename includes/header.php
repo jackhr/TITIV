@@ -45,7 +45,7 @@
                     </div>
                 </div>
 				<a class="<?php if($page=='information') echo 'current' ?>" href="general-info.php"><span>Info & FAQ</span></a>
-                <a href="http://www.titirentacarantigua.com/"><span>Car Rentals<span></a>
+                <a target="_blank" href="http://www.titirentacarantigua.com/"><span>Car Rentals<span></a>
                 <a class="<?php if($page=='contact') echo 'current' ?>" href="contact.php"><span>Contact<span></a>
 			</nav>
 			<a id="mobile-menu"><img src="images/menu.png" width="40" height="28" /></a>
