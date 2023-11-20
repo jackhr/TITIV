@@ -33,6 +33,8 @@ foreach($villa_directory_files as $idx => $file) {
     $img_src_arr[] = $file;
 }
 
+$link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
 ?>
 
     <div id="show-carousel-container">
@@ -67,12 +69,17 @@ foreach($villa_directory_files as $idx => $file) {
     <main id="details">
         <div class="header">
             <h1><?php echo $villa['name']; ?></h1>
-            <div class="location-container">
+            <div class="sub-header-container">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                     <circle cx="12" cy="10" r="3"/>
                 </svg>
                 <a href="<?php echo $villa['address_link']; ?>" target="_blank"><?php echo $villa['address']; ?></a>
+                <span>•</span>
+                <div class="villa-icon-pair share" onclick="$('#share-modal').addClass('show');">
+                    <?php echo $villa_svg_lookup['share']; ?>
+                    <span>Share</span>
+                </div>
             </div>
         </div>
         <div class="first-four">
@@ -129,7 +136,6 @@ foreach($villa_directory_files as $idx => $file) {
         </div>
     </main>
 
-
     <div id="image-gallery">
         <div class="close gallery-btn" onclick="$('html').removeClass('viewing')">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
@@ -162,7 +168,41 @@ foreach($villa_directory_files as $idx => $file) {
         </div>
     </div>
 
+    <div id="share-modal">
+        <div id="share-modal-content">
+            <div id="close-share" onclick="$('#share-modal').removeClass('show')"><?php echo $villa_svg_lookup['close']; ?></div>
+            <div id="share-modal-header">
+                <img src="assets/<?php echo $slug; ?>/compressed/1500px/<?php echo $villa['img_slug_1']; ?>.jpg">
+                <div>
+                    <h1><?php echo $villa['name']; ?></h1>
+                    <span><?php echo $villa['address']; ?></span>
+                </div>
+            </div>
+            <div id="share-modal-body">
+                <div class="share-btn copy" data-link="<?php echo $link; ?>">
+                    <?php echo $villa_svg_lookup['copy']; ?>
+                    <span>Copy Link</span>
+                </div>
+                <a class="share-btn email" href="mailto:?subject=Look at This Titi Vacation Rental Villa I Found&body=<?php echo $link; ?>">
+                    <?php echo $villa_svg_lookup['mail']; ?>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+        $(".share-btn.copy").on('click', function() {
+            const link = $(this).data('link');
+            const temp = $("<input>");
+            $("body").append(temp);
+            temp.val(link).select();
+            document.execCommand("copy");
+            temp.remove();
+            $(this).find('span').text('Copied!');
+            setTimeout(() => $(this).find('span').text('Copy Link'), 1000);
+        });
 
         function updateCurrentImgNum() {
             const idx = $("#image-gallery .gallery-img-container.active").data('idx');
@@ -259,6 +299,10 @@ foreach($villa_directory_files as $idx => $file) {
                 }
             }
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
+        });
+
+        $("#share-modal").on('click', function(e) {
+            if (e.target.id == 'share-modal') $(this).removeClass('show');
         });
 
     </script>

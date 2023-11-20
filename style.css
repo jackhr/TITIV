@@ -611,7 +611,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 #details .header h1 {
     width: max-content;
 }
-#details .header .location-container {
+#details .header .sub-header-container {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -754,6 +754,107 @@ html.viewing #image-gallery .gallery-img-container.active {
     border-radius: 4px;
     font-size: 18px;
     letter-spacing: 1.5px;
+}
+.villa-icon-pair.share {
+    cursor: pointer;
+}
+.villa-icon-pair.share span {
+    color: var(--red);
+}
+#share-modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    top: 0;
+    z-index: 2000;
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.4);
+    transition: opacity ease 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    padding: 24px;
+    height: calc(100% - 48px);
+    width: calc(100% - 48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#share-modal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+#share-modal-content {
+    width: max-content;
+    height: fit-content;
+    border-radius: 6px;
+    background: var(--white);
+    box-shadow: 0 0 13px 3px #0000001a;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 48px;
+    position: relative;
+}
+#share-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+#share-modal-header img {
+    max-width: 150px;
+}
+#share-modal-header h1 {
+    font-size: 2em;
+    width: max-content;
+}
+#share-modal-header span {
+    color: var(--red);
+}
+#share-modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.share-btn {
+    background: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    gap: 12px;
+    transition: all ease 0.3s;
+    border: solid 2px transparent;
+}
+.share-btn:hover {
+    background: var(--white);
+    color: var(--grey);
+    border-color: var(--grey);
+    opacity: 1;
+}
+#close-share {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--grey);
+    cursor: pointer;
+}
+#close-share svg {
+    width: 18px;
+    height: 18px;
 }
 
 
