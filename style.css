@@ -76,7 +76,18 @@ section.background-solid { background: var(--white); position: relative; z-index
 }
 .section-inner-wrap img { max-width: 100%; height: auto; }
 
-
+section.contact.features {
+    height: 490px;
+}
+section.contact.features .section-inner-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+section.masthead.contact .background {
+    background: url('assets/Villa_Ordnance/compressed/2000px/aerial-1.jpg') top center no-repeat;
+}
 
 
 

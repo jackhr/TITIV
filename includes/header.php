@@ -15,7 +15,6 @@
 </head>
 <body id="<?php echo $page ?>-page">
 
-	<div id="nav-overlay"></div>
 	<header>
 		<div class="section-inner-wrap">
 			<a href="index.php" class="logo-link">
