@@ -169,11 +169,11 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <div class="details-separator"></div>
         <h2 id="test">Book Now</h2>
         <div class="book-now">
-            <a href="<?php echo $villa['booking_dot_com_link']; ?>" class="booking-btn booking-dot-com">
+            <a target="_blank" href="<?php echo $villa['booking_dot_com_link']; ?>" class="booking-btn booking-dot-com">
                 <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
                 <span>Booking.com</span>
             </a>
-            <a href="<?php echo $villa['air_bnb_link']; ?>" class="booking-btn airbnb">
+            <a target="_blank" href="<?php echo $villa['air_bnb_link']; ?>" class="booking-btn airbnb">
                 <img src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" alt="Airbnb logo">
                 <span>Airbnb</span>
             </a>
