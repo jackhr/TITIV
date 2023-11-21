@@ -910,6 +910,9 @@ html.viewing-ammenities {
     padding: 24px;
     gap: 52px;
 }
+.share.modal .modal-content {
+    height: fit-content;
+}
 .ammenity-type h1 {
     font-size: 2em;
 }
