@@ -6,7 +6,7 @@
 	<section class="masthead contact background-img">
 		<div class="section-inner-wrap">
 			<hgroup>
-				<h1>Contact Titi Vacation Rentals</h1>
+				<h1>Contact<br>Titi Vacation Rentals</h1>
 			</hgroup>
 		</div>
 	</section>
