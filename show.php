@@ -293,7 +293,7 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         }
 
         $("#carousel-img-count").on('click', function() {
-            const active = $("#show-carousel-container .show-carousel-img.active");
+            const active = $("#show-carousel-container .show-carousel-img.middle");
             const idx = active.find('img').data('idx');
             $("#image-gallery .gallery-img-container.active").removeClass('active');
             $("#image-gallery .gallery-img-container").eq(idx).addClass('active');
