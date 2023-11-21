@@ -9,8 +9,27 @@
         <p>Mon-Sat: 08:00 - 17:00 &nbsp; &bull; &nbsp; Sunday: 08:00 - 13:00</p>
         <p class="tel">+1 (268) 460-1452 &nbsp; &bull; &nbsp; VHF #68 &nbsp; &bull; &nbsp; <a href="mailto:titi@candw.ag">titi@candw.ag</a></p>
         <nav>
-            <a class="<?php if($page=='index') echo 'current' ?>" href="index.php"><span>Villas</span></a>
-            <a class="<?php if($page=='information') echo 'current' ?>" href="general-information.php"><span>Info & FAQ</span></a>
+            <div class="custom-dropdown">
+                <span class="villa-toggle">Villas</span>
+                <div class="dropdown-content hidden">
+                    <?php if ($prod) {
+                        $villas_query = "SELECT name FROM villas;";
+                        $result = mysqli_query($con, $villas_query);
+                        $villas = [];
+                        
+                        while($v = mysqli_fetch_assoc($result)) $villas[] = $v;
+
+                        foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'>{$v['name']}</a>";
+                    } else { ?>
+                        <a class='dropdown-item' href='show.php?villa=Villa Ordnance'>Villa Ordnance</a>
+                        <a class='dropdown-item' href='show.php?villa=Casa Chiesa'>Casa Chiesa</a>
+                        <a class='dropdown-item' href='show.php?villa=Little Rock Cottage'>Little Rock Cottage</a>
+                        <a class='dropdown-item' href='show.php?villa=Goat Hill Studio'>Goat Hill Studio</a>
+                        <a class='dropdown-item' href='show.php?villa=Goat Rock Studio'>Goat Rock Studio</a>
+                    <?php } ?>
+                </div>
+            </div>
+            <a class="<?php if($page=='information') echo 'current' ?>" href="faq.php"><span>Info & FAQ</span></a>
             <a target="_blank" href="http://www.titirentacarantigua.com"><span>Car Rentals</span></a>
             <a class="<?php if($page=='contact') echo 'current' ?>" href="contact.php"><span>Contact</span></a>
         </nav>

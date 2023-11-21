@@ -24,16 +24,15 @@
             </a>
 			<nav>
                 <div class="custom-dropdown">
-                    <span id="villa-toggle" class="<?php if($page=='index') echo 'current' ?>">Villas</span>
+                    <span class="villa-toggle">Villas</span>
                     <div class="dropdown-content hidden">
-                        <?php
-                        if ($prod) {
+                        <?php if ($prod) {
                             $villas_query = "SELECT name FROM villas;";
                             $result = mysqli_query($con, $villas_query);
                             $villas = [];
                             
                             while($v = mysqli_fetch_assoc($result)) $villas[] = $v;
-    
+
                             foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'>{$v['name']}</a>";
                         } else { ?>
                             <a class='dropdown-item' href='show.php?villa=Villa Ordnance'>Villa Ordnance</a>
@@ -44,7 +43,7 @@
                         <?php } ?>
                     </div>
                 </div>
-				<a class="<?php if($page=='information') echo 'current' ?>" href="general-info.php"><span>Info & FAQ</span></a>
+				<a class="<?php if($page=='information') echo 'current' ?>" href="faq.php"><span>Info & FAQ</span></a>
                 <a target="_blank" href="http://www.titirentacarantigua.com/"><span>Car Rentals<span></a>
                 <a class="<?php if($page=='contact') echo 'current' ?>" href="contact.php"><span>Contact<span></a>
 			</nav>
@@ -55,9 +54,10 @@
     <script>
 
         $(document).on('click', e => {
-            if ($("#villa-toggle").is(e.target)) {
+            if ($(".villa-toggle").is(e.target)) {
                 // If we are pressing the toggle, we want to toggle the dropdown
-                return $(".dropdown-content").toggleClass('hidden');
+                $('.dropdown-content').addClass('hidden');
+                return $(e.target).siblings(".dropdown-content").toggleClass('hidden');
             }
 
             if (!$('.dropdown-content').has(e.target).length && !$('.dropdown-content').is(e.target)) {
