@@ -85,10 +85,6 @@ section.contact.features .section-inner-wrap {
     justify-content: center;
     padding: 0;
 }
-section.masthead.contact .background {
-    background: url('assets/Villa_Ordnance/compressed/2000px/aerial-1.jpg') top center no-repeat;
-}
-
 footer .dropdown-content {
     bottom: 45px;
     top: unset;
@@ -244,17 +240,22 @@ header .custom-dropdown span {
 
 /* ========== Masthead Section ========== */
 
-section.masthead { display: block; padding: 60px 0 140px; }
-section.masthead .background {
-	position: fixed; left: -10px; top: -10px; right: -10px; bottom: -10px; z-index: -1;
-	background: url('images/TITI-Office_Photo.jpg') center center no-repeat;
-	background-size: cover;
+section.masthead {
+    display: block;
+    padding: 60px 0 140px;
+    position: relative;
 }
-section.masthead .overlay {
-	width: 100%; height: 100%;
-	position: absolute; left: 0; top: 0;
-	background: var(--grey);
-	opacity: 0.5;
+section.masthead::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/Villa_Ordnance/compressed/2000px/aerial-1.jpg') center no-repeat;
+    background-size: cover;
+    filter: brightness(70%);
+    z-index: -1;
 }
 section.masthead hgroup { margin: 60px 0 0 0; text-shadow: 0 2px 8px rgba(0,0,0,0.2); color: var(--white); }
 section.masthead hgroup h3 { padding: 0 }
