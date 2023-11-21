@@ -4,8 +4,6 @@
 <?php include_once 'includes/header.php'; ?>
 
 	<section class="masthead background-img">
-		<div class="background"></div>
-		<div class="overlay"></div>
 		<div class="section-inner-wrap">
 			<hgroup>
 				<h1>Frequently Asked Questions</h1>
