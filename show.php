@@ -76,8 +76,6 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php
         foreach($img_src_arr as $idx => $img_src) {
             $class = '';
-            if ($idx == count($img_src_arr) - 5) $class = 'active left_5';
-            if ($idx == count($img_src_arr) - 4) $class = 'active left_4';
             if ($idx == count($img_src_arr) - 3) $class = 'active left_3';
             if ($idx == count($img_src_arr) - 2) $class = 'active left_2';
             if ($idx == count($img_src_arr) - 1) $class = 'active left';
@@ -85,8 +83,6 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             if ($idx == 1) $class = 'active right';
             if ($idx == 2) $class = 'active right_2';
             if ($idx == 3) $class = 'active right_3';
-            if ($idx == 4) $class = 'active right_4';
-            if ($idx == 5) $class = 'active right_5';
             echo "
                 <div class='show-carousel-img $class'>
                     <img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' />
@@ -370,38 +366,30 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             right_5.removeClass('right_5');
             // Assign new classes
             if (goingRight) {
-                left_5.removeClass('active');
-                left_4.addClass('left_5');
-                left_3.addClass('left_4');
+                left_3.removeClass('active');
                 left_2.addClass('left_3');
                 left.addClass('left_2');
                 middle.addClass('left');
                 right.addClass('middle');
                 right_2.addClass('right');
                 right_3.addClass('right_2');
-                right_4.addClass('right_3');
-                right_5.addClass('right_4');
-                if (right_5.next('.show-carousel-img').length) {
-                    right_5.next('.show-carousel-img').addClass('right_5 active');
+                if (right_3.next('.show-carousel-img').length) {
+                    right_3.next('.show-carousel-img').addClass('right_3 active');
                 } else {
-                    $('.show-carousel-img').first('.show-carousel-img').addClass('right_5 active');
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('right_3 active');
                 }
             } else {
-                right_5.removeClass('active');
-                right_4.addClass('right_5');
-                right_3.addClass('right_4');
+                right_3.removeClass('active');
                 right_2.addClass('right_3');
                 right.addClass('right_2');
                 middle.addClass('right');
                 left.addClass('middle');
                 left_2.addClass('left');
                 left_3.addClass('left_2');
-                left_4.addClass('left_3');
-                left_5.addClass('left_4');
-                if (left_5.prev('.show-carousel-img').length) {
-                    left_5.prev('.show-carousel-img').addClass('left_5 active');
+                if (left_3.prev('.show-carousel-img').length) {
+                    left_3.prev('.show-carousel-img').addClass('left_3 active');
                 } else {
-                    $('.show-carousel-img').first('.show-carousel-img').addClass('left_5 active');
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('left_3 active');
                 }
             }
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
