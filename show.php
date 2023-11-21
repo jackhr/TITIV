@@ -76,11 +76,17 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <?php
         foreach($img_src_arr as $idx => $img_src) {
             $class = '';
+            if ($idx == count($img_src_arr) - 5) $class = 'active left_5';
+            if ($idx == count($img_src_arr) - 4) $class = 'active left_4';
+            if ($idx == count($img_src_arr) - 3) $class = 'active left_3';
             if ($idx == count($img_src_arr) - 2) $class = 'active left_2';
             if ($idx == count($img_src_arr) - 1) $class = 'active left';
             if ($idx == 0) $class = 'active middle';
             if ($idx == 1) $class = 'active right';
             if ($idx == 2) $class = 'active right_2';
+            if ($idx == 3) $class = 'active right_3';
+            if ($idx == 4) $class = 'active right_4';
+            if ($idx == 5) $class = 'active right_5';
             echo "
                 <div class='show-carousel-img $class'>
                     <img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' />
@@ -339,39 +345,63 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $('#show-carousel-container').addClass('sliding');
             const goingRight = $(this).hasClass('next');
             // Get all image containers
+            const left_5 = $("#show-carousel-container .left_5");
+            const left_4 = $("#show-carousel-container .left_4");
+            const left_3 = $("#show-carousel-container .left_3");
             const left_2 = $("#show-carousel-container .left_2");
             const left = $("#show-carousel-container .left");
             const middle = $("#show-carousel-container .middle");
             const right = $("#show-carousel-container .right");
             const right_2 = $("#show-carousel-container .right_2");
+            const right_3 = $("#show-carousel-container .right_3");
+            const right_4 = $("#show-carousel-container .right_4");
+            const right_5 = $("#show-carousel-container .right_5");
             // Remove Classes
+            left_5.removeClass('left_5');
+            left_4.removeClass('left_4');
+            left_3.removeClass('left_3');
             left_2.removeClass('left_2');
             left.removeClass('left');
             middle.removeClass('middle');
             right.removeClass('right');
             right_2.removeClass('right_2');
+            right_3.removeClass('right_3');
+            right_4.removeClass('right_4');
+            right_5.removeClass('right_5');
             // Assign new classes
             if (goingRight) {
-                left_2.removeClass('active');
+                left_5.removeClass('active');
+                left_4.addClass('left_5');
+                left_3.addClass('left_4');
+                left_2.addClass('left_3');
                 left.addClass('left_2');
                 middle.addClass('left');
                 right.addClass('middle');
                 right_2.addClass('right');
-                if (right_2.next('.show-carousel-img').length) {
-                    right_2.next('.show-carousel-img').addClass('right_2 active');
+                right_3.addClass('right_2');
+                right_4.addClass('right_3');
+                right_5.addClass('right_4');
+                if (right_5.next('.show-carousel-img').length) {
+                    right_5.next('.show-carousel-img').addClass('right_5 active');
                 } else {
-                    $('.show-carousel-img').first('.show-carousel-img').addClass('right_2 active');
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('right_5 active');
                 }
             } else {
-                right_2.removeClass('active');
+                right_5.removeClass('active');
+                right_4.addClass('right_5');
+                right_3.addClass('right_4');
+                right_2.addClass('right_3');
                 right.addClass('right_2');
                 middle.addClass('right');
                 left.addClass('middle');
                 left_2.addClass('left');
-                if (left_2.prev('.show-carousel-img').length) {
-                    left_2.prev('.show-carousel-img').addClass('left_2 active');
+                left_3.addClass('left_2');
+                left_4.addClass('left_3');
+                left_5.addClass('left_4');
+                if (left_5.prev('.show-carousel-img').length) {
+                    left_5.prev('.show-carousel-img').addClass('left_5 active');
                 } else {
-                    $('.show-carousel-img').first('.show-carousel-img').addClass('left_2 active');
+                    $('.show-carousel-img').first('.show-carousel-img').addClass('left_5 active');
                 }
             }
             setTimeout(() => $('#show-carousel-container').removeClass('sliding'), 760);
