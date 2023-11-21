@@ -89,6 +89,10 @@ section.masthead.contact .background {
     background: url('assets/Villa_Ordnance/compressed/2000px/aerial-1.jpg') top center no-repeat;
 }
 
+footer .dropdown-content {
+    bottom: 45px;
+    top: unset;
+}
 
 
 /* ========== Forms ========== */
@@ -180,8 +184,10 @@ header #mobile-menu { display: none; }
     justify-content: center;
     position: relative;
 }
-.custom-dropdown span {
+header .custom-dropdown span {
     text-shadow: 0 1px 3px var(--grey);
+}
+.custom-dropdown span {
     cursor: pointer;
 }
 .custom-dropdown span:hover {
@@ -209,6 +215,30 @@ header #mobile-menu { display: none; }
     opacity: 0;
     pointer-events: none;
 }
+
+#faq-page h3, #antigua-page h3, #contact-page h3 { margin-top: 10px }
+#faq-page h4, #antigua-page h4, #contact-page h4 { margin-top: 2px }
+#contact-map {
+	display: block;
+	margin: 20px auto;
+}
+
+#information-page h2 { padding: 40px 0 5px; }
+
+.question {
+	padding: 20px 0 0 0;
+	border-bottom: 1px solid #CCC;
+	cursor: pointer;
+}
+.question h3 {
+	padding: 0 0 15px 0;
+}
+.question img {
+	position: relative; top: 6px;
+	margin: 5px 3px 0 0;
+}
+.question p { max-height: 0; overflow: hidden; padding: 0; transition: all 1000ms; }
+.question.showing p { max-height: 200px; padding-bottom: 15px; }
 
 
 
