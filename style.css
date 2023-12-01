@@ -1210,6 +1210,63 @@ html.viewing-ammenities {
         margin-top: 48px;
     }
 
+    .ammenities.modal .modal-header h1 {
+        font-size: 1.7em;
+    }
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        height: 20px;
+        width: 20px;        
+    }
+    .modal-close svg {
+        width: 16px;
+        height: 16px;        
+    }
+
+    #show-page .villa-img-arrow, #show-page .gallery-btn {
+        height: 40px;
+        width: 40px;
+    }
+    #image-gallery .gallery-btn.prev {
+        left: 10px;
+    }
+    #image-gallery .gallery-btn.next {
+        right: 10px;
+    }
+    #image-gallery .gallery-btn.close {
+        top: 10px;
+        right: 10px;
+    }
+    .modal.share .modal-content {
+        padding: 38px 12px 12px;
+        gap: 24px;
+    }
+    .modal.share .modal-header {
+        flex-direction: column;
+    }
+    .modal.share .modal-header img {
+        max-width: 100%;
+        border-radius: 4px;
+    }
+    .modal.share .modal-header h1 {
+        width: max-content;
+        margin: 0 auto 10px;
+    }
+    .modal.share .modal-header > div > span {
+        display: block;
+        text-align: center;        
+    }
+    .modal.share .modal-body {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .share-btn {
+        padding: 12px 0;
+        width: 100%;        
+    }
+
 }
 
 
