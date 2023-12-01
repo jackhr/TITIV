@@ -1,5 +1,12 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap'); */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
 	--white: #FAFAFA;
@@ -172,7 +179,10 @@ header svg {
     height: auto;
 }
 
-header #mobile-menu { display: none; }
+header #mobile-menu {
+    display: none;
+    cursor: pointer;
+}
 
 .custom-dropdown {
     color: var(--white);
@@ -210,6 +220,19 @@ header .custom-dropdown span {
 .dropdown-content.hidden {
     opacity: 0;
     pointer-events: none;
+}
+#nav-close {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 4px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
 }
 
 #faq-page h3, #antigua-page h3, #contact-page h3 { margin-top: 10px }
@@ -424,7 +447,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 
 #villas {
     margin-top: calc(var(--intro-height) - var(--nav-height));
-    padding: 90px 0;
+    padding: 90px 32px 0;
     background-color: var(--white);
 }
 #villas > h1 {
@@ -1009,10 +1032,69 @@ html.viewing-ammenities {
     max-height: 30px;
 }
 
+#mobile-nav {
+    display: none;
+    width: calc(100% - (48px*2));
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: 0;
+    height: calc(100vh - (48px*2));
+    background: var(--red);
+    z-index: 2000;
+    flex-direction: column;
+    padding: 48px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity ease 0.5s;
+}
+
+
+/* ========== Tablet ========== */
+
+@media screen and (max-width: 991px) {
+
+    :root {
+        --intro-height: 70vh;
+    }
+
+    #villas {
+        padding: 60px 24px 0;
+    }
+    
+}
+
 
 /* ========== Mobile ========== */
 
 @media screen and (max-width: 680px) {
+
+    :root {
+        --nav-height: 60px;
+    }
+
+    h1 { font-size: 2.6em; margin-bottom: 10px; }
+	h2 { font-size: 2em }
+
+    #villas {
+        padding: 50px 12px 0;
+    }
+    .villa-title {
+        padding: 18px 0;
+    }
+    .villa-img {
+        height: 200px;
+    }
+    .villa-body {
+        font-size: 14px;
+        padding: 20px 0 12px;
+    }
+    .villa-footer {
+        padding: 12px 0 20px;
+    }
+    .main-btn {
+        height: 36px;
+    }
 
 	#nav-overlay {
 		display: none;
@@ -1020,26 +1102,94 @@ html.viewing-ammenities {
 		position: fixed; left: 0; top: 0; z-index: 100;
 		background: #3684B2;
 	}
-	header { position: absolute }
 	header #mobile-menu {
-		display: block;
-		position: absolute; bottom: 10px; right: 0;
-		padding: 20px 0 0 20px;
-		opacity: 1 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1 !important;
 	}
-	header nav { display: none; width: 100%; position: absolute; right: auto; left: 0; top: 100%; }
-	header nav.showing { display: block }
+	header nav:not(#mobile-nav) {
+        display: none;
+    }
+	#mobile-nav {
+        display: flex;
+    }
+	header nav.showing {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
 
 	header nav a {
 		display: block;
-		height: auto;
-		padding: 20px;
-		font-size: 1.2em;
-		border-bottom: 1px solid rgba(255,255,255,0.5);
-		text-align: center;
-		opacity: 1 !important;
 	}
+    header nav a,
+    .custom-dropdown {
+        font-size: 1.2em;
+        border-bottom: 1px solid #ffffff80;
+        text-align: center;
+        opacity: 1 !important;
+        margin: 0;
+        width: 100%;
+        padding: 20px;
+    }
 	header nav a:last-child { border-bottom: none}
+    header nav a span {
+        position: static;
+    }
+    header nav a.dropdown-item {
+        margin: 0;
+        padding: 10px 0;
+    }
+    .dropdown-content {
+        padding: 10px;
+        gap: 0;
+        top: 55px;
+    }
+    .dropdown-content a.dropdown-item {
+        padding: 10px 0;
+        font-size: 1em;
+    }
+    header .section-inner-wrap {
+        position: static;
+    }
+    #nav-close {
+        display: flex;
+    }
+
+    .sub-header-container {
+        flex-direction: column;
+        align-items: flex-start !important;
+        max-width: 100%;
+    }
+    .sub-header-container > span {
+        display: none;
+    }
+    .sub-header-container .villa-icon-pair {
+        max-width: 100%;
+    }
+    .sub-header-container .villa-icon-pair svg {
+        min-width: 24px;
+    }
+    .sub-header-container .villa-icon-pair > *:not(svg) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    #details .first-four {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 18px;
+        max-width: 480px;
+        margin: 28px auto;
+        width: 100%;
+    }
+    #details .first-four .villa-icon-pair {
+        margin: auto;
+        width: 130px;
+        justify-content: flex-start;
+    }
 
  	#rentals-page .xdsoft_datetimepicker { margin-left: -40px }
 
@@ -1049,15 +1199,21 @@ html.viewing-ammenities {
 	.feature-box p { text-align: center }
 
 
-	footer { background: #3684B2; }
+    .booking-btns {
+        flex-direction: column;
+    }
+
+    .book-now {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 48px;
+    }
 
 }
 
 
 @media screen and (max-width: 480px) {
-
-	h1 { font-size: 2.6em; margin-bottom: 10px; }
-	h2 { font-size: 2em }
 
 	section.vehicle-select nav { display: none }
 	section.vehicle-select select { display: block; margin: 10px auto 0; }
