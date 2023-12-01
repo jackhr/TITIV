@@ -14,20 +14,28 @@ if ($prod) {
 }
 ?>
     <div class="slideshow-container">
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-1.jpg');" class="slide active"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-2.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/aerial-3.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/dining-exterior.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/guest-bedroom.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Villa_Ordnance/compressed/3000px/living-area.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/_front-veranda-1.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/living-room-1.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Casa_Chiesa/compressed/3000px/pool-1.jpg');" class="slide" ></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/bedroom-1.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/living-room-1.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Little_Rock_Cottage/compressed/3000px/pool-1.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Rock_Studio/compressed/3000px/interior-11.jpg');" class="slide"></div>
-        <div style="background-image: url('assets/Goat_Rock_Studio/compressed/3000px/pool-5.jpg');" class="slide"></div>
+        <?php
+            $asset_directory_contents = scandir("assets/");
+            
+            $rendered_first_img = false;
+
+            foreach($asset_directory_contents as $idx => $slug) {
+                if ($slug[0] == '.' || $slug == 'icons') continue;
+                $villa_directory_files = scandir("assets/$slug/compressed/1500px/");
+    
+                $img_count = 0;
+                foreach($villa_directory_files as $idx => $file) {
+                    if ($file[0] == '.' || $file == 'icons') continue;
+                    $img_count++;
+                    $active = $rendered_first_img ? '' : 'active';
+                    
+                    echo "<div style=\"background-image: url('assets/$slug/compressed/3000px/$file');\" class=\"slide $active\"></div>";
+
+                    if (count($img_src_arr) >= 6) break;
+                    $rendered_first_img = true;
+                }
+            }
+        ?>
     </div>
     <div id="villas">
         <h1>Titi Vacation Homes</h1>
