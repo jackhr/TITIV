@@ -24,7 +24,7 @@
 }
 
 * { margin: 0; padding: 0; }
-body { font: 11pt var(--font-body); color: #333; background: #3684B2 }
+body { font: 11pt var(--font-body); color: #333; }
 
 p { max-width: 750px; margin: 0 auto 10px; padding: 5px 0 10px; line-height: 1.3em; text-align: center; }
 
@@ -1271,6 +1271,16 @@ html.viewing-ammenities {
         width: 100%;        
     }
 
+    footer .custom-dropdown {
+        border: none;
+        position: static;
+        width: revert;
+    }
+    footer .dropdown-content {
+        bottom: 170px;
+        width: 220px;
+        left: 24px;
+    }
 }
 
 
@@ -1292,3 +1302,6 @@ html.viewing-ammenities {
     }
 
 }
+
+
+  
