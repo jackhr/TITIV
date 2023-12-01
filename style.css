@@ -1076,6 +1076,10 @@ html.viewing-ammenities {
     h1 { font-size: 2.6em; margin-bottom: 10px; }
 	h2 { font-size: 2em }
 
+    .slide {
+        background-attachment: revert;
+    }
+
     #villas {
         padding: 50px 12px 0;
     }
