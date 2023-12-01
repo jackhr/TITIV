@@ -1271,6 +1271,9 @@ html.viewing-ammenities {
         width: 100%;        
     }
 
+}
+
+@media screen and (min-width: 481px) and (max-width: 680px) {
     footer .custom-dropdown {
         border: none;
         position: static;
