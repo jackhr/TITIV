@@ -15,21 +15,22 @@ if ($prod) {
 ?>
     <div class="slideshow-container">
         <?php
-            $asset_directory_contents = scandir("assets/");
+            $villa_dir_str = "assets/villas/";
+            $asset_directory_contents = scandir($villa_dir_str);
             
             $rendered_first_img = false;
 
             foreach($asset_directory_contents as $idx => $slug) {
-                if ($slug[0] == '.' || $slug == 'icons') continue;
-                $villa_directory_files = scandir("assets/$slug/compressed/1500px/");
+                if ($slug[0] == '.') continue;
+                $villa_directory_files = scandir("$villa_dir_str$slug/compressed/1500px/");
     
                 $img_count = 0;
                 foreach($villa_directory_files as $idx => $file) {
-                    if ($file[0] == '.' || $file == 'icons') continue;
+                    if ($file[0] == '.') continue;
                     $img_count++;
                     $active = $rendered_first_img ? '' : 'active';
                     
-                    echo "<div style=\"background-image: url('assets/$slug/compressed/3000px/$file');\" class=\"slide $active\"></div>";
+                    echo "<div style=\"background-image: url('$villa_dir_str$slug/compressed/3000px/$file');\" class=\"slide $active\"></div>";
 
                     if (count($img_src_arr) >= 6) break;
                     $rendered_first_img = true;
@@ -53,11 +54,7 @@ if ($prod) {
                 $g_s = $guests == 1 ? '' : 's';
                 $be_s = $beds == 1 ? '' : 's';
                 $ba_s = $baths == 1 ? '' : 's';
-
-                $img_src_arr = [];
-                $villa_directory_files = scandir("assets/$slug/compressed/1500px/");
-
-                ?>
+            ?>
 
                 <div class="villa">
                     <h2 class="villa-title"><?php echo $villa['name']?></h2>
@@ -70,9 +67,9 @@ if ($prod) {
                         <div class="villa-img-inner">
                             <?php
                             echo "
-                            <img data-idx='0' src='assets/$slug/compressed/1500px/{$villa['img_slug_1']}.jpg' class='active' />
-                            <img data-idx='1' src='assets/$slug/compressed/1500px/{$villa['img_slug_2']}.jpg' />
-                            <img data-idx='2' src='assets/$slug/compressed/1500px/{$villa['img_slug_3']}.jpg' />
+                            <img data-idx='0' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_1']}.jpg' class='active' />
+                            <img data-idx='1' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_2']}.jpg' />
+                            <img data-idx='2' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_3']}.jpg' />
                             ";
                             ?>
                         </div>

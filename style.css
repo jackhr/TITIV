@@ -14,7 +14,7 @@
 	--grey: #333;
 	--font-body: 'Poppins';
 	--font-header: 'Poppins';
-    --nav-height: 78px;
+    --nav-height: 110px;
     --intro-height: 80vh;
     --villa-width: 420px;
     --carousel-height: 450px;
@@ -160,8 +160,20 @@ header .section-inner-wrap {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    height: unset;
+    height: var(--nav-height);
     align-items: center;
+}
+.logo-link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+footer .logo-link {
+    width: max-content;
+    margin: auto;
+}
+.logo-link img {
+    width: 100px;
 }
 header nav {
     height: 100%;
@@ -1070,7 +1082,7 @@ html.viewing-ammenities {
 @media screen and (max-width: 680px) {
 
     :root {
-        --nav-height: 60px;
+        --nav-height: 80px;
     }
 
     h1 { font-size: 2.6em; margin-bottom: 10px; }
@@ -1112,6 +1124,9 @@ html.viewing-ammenities {
         justify-content: center;
         opacity: 1 !important;
 	}
+    header .logo-link img {
+        width: 75px;
+    }
 	header nav:not(#mobile-nav) {
         display: none;
     }

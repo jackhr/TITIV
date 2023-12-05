@@ -55,7 +55,7 @@ if ($prod) {
 
 $img_src_arr = [];
 $slug = $villa['slug'];
-$villa_directory_files = scandir("assets/$slug/compressed/1500px/");
+$villa_directory_files = scandir("assets/villas/$slug/compressed/1500px/");
 
 foreach($villa_directory_files as $idx => $file) {
     if ($file[0] == '.') continue;
@@ -85,7 +85,7 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             if ($idx == 3) $class = 'active right_3';
             echo "
                 <div class='show-carousel-img $class'>
-                    <img data-idx='$idx' src='assets/$slug/compressed/1500px/$img_src' />
+                    <img data-idx='$idx' src='assets/villas/$slug/compressed/1500px/$img_src' />
                 </div>
             ";
         }
@@ -202,7 +202,7 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $class = $idx == 0 ? 'active' : '';
             echo '
                 <div data-idx="'.$idx.'" class="gallery-img-container '.$class.'">
-                    <img src="assets/'.$slug.'/compressed/3000px/'.$img_src.'" />
+                    <img src="assets/villas/'.$slug.'/compressed/3000px/'.$img_src.'" />
                 </div>
             ';
         }
@@ -221,7 +221,7 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         <div class="modal-content">
             <div class="modal-close"><?php echo $svg_lookup['close']; ?></div>
             <div class="modal-header">
-                <img src="assets/<?php echo $slug; ?>/compressed/1500px/<?php echo $villa['img_slug_1']; ?>.jpg">
+                <img src="assets/villas/<?php echo $slug; ?>/compressed/1500px/<?php echo $villa['img_slug_1']; ?>.jpg">
                 <div>
                     <h1><?php echo $villa['name']; ?></h1>
                     <span><?php echo $villa['address']; ?></span>
