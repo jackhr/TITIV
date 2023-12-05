@@ -121,7 +121,7 @@ if ($prod) {
 
         const STATE = {
             currentSlide: 0,
-            panelWidth: $('.villa').width()
+            panelWidth: 420
         }
 
         let currentSlide = 0;
