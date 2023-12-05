@@ -403,23 +403,6 @@ $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 $('html').removeClass('viewing-ammenities');
             }
         });
-
-        var containerClass = "._11jhslp";
-        var textClass = ".m1ec1bsa";
-        var iconClass = ".lhg7v4y";
-
-        var iconsArr = document.querySelectorAll(`${containerClass} ${iconClass}`);
-        var textArr = document.querySelectorAll(`${containerClass} ${textClass}`);
-
-        var final_test = {};
-
-        for(let i = 0; i < 63; i++) {
-            const text = textArr[i].innerText;
-            const icon = iconsArr[0].children[0].children[0];
-
-            final_test[text] = icon.outerHTML;
-        }
-
     </script>
 
 <?php include_once 'includes/footer.php' ?>
