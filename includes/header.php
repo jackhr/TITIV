@@ -79,12 +79,12 @@
 
         $('#mobile-menu').on('click', function(){
             $('header nav').addClass('showing');
-            $('html').addClass('viewing');
+            $('html').addClass('viewing-mobile-nav');
         });
 
         $("#nav-close").on('click', function() {
             $('header nav').removeClass('showing');
-            $('html').removeClass('viewing');
+            $('html').removeClass('viewing-mobile-nav');
         })
         
     </script>

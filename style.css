@@ -771,7 +771,8 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     background-color: #f5f5f5;
 }
  
-html.viewing {
+html.viewing,
+html.viewing-mobile-nav {
     overflow: hidden;
 }
 #image-gallery {
