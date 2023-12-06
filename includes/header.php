@@ -18,7 +18,7 @@
 	<header>
 		<div class="section-inner-wrap">
 			<a href="index.php" class="logo-link">
-                <img src="/assets/logos/TITI-NewLogo2023-Homes(White)-v1.jpg" alt="Logo">
+                <img src="/assets/logos/TITIV-NewLogo.png" alt="Logo">
             </a>
             <?php
             for($i = 0; $i < 2; $i++) {

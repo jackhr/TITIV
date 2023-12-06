@@ -1,7 +1,7 @@
 <footer>
     <div class="section-inner-wrap">
         <a href="index.php" class="logo-link">
-            <img src="/assets/logos/TITI-NewLogo2023-Homes(White)-v1.jpg" alt="Logo">
+            <img src="/assets/logos/TITIV-NewLogo.png" alt="Logo">
         </a>
         <p>Falmouth Harbour<br>St Paul's, Antigua</p>
         <p>Mon-Sat: 08:00 - 17:00 &nbsp; &bull; &nbsp; Sunday: 08:00 - 13:00</p>
