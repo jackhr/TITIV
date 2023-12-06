@@ -67,9 +67,9 @@ if ($prod) {
                         <div class="villa-img-inner">
                             <?php
                             echo "
-                            <img data-idx='0' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_1']}.jpg' class='active' />
-                            <img data-idx='1' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_2']}.jpg' />
-                            <img data-idx='2' src='$villa_dir_str$slug/compressed/1500px/{$villa['img_slug_3']}.jpg' />
+                            <img data-idx='0' src='assets/villas/$slug/compressed/1500px/{$villa['img_slug_1']}.jpg' class='active' />
+                            <img data-idx='1' src='assets/villas/$slug/compressed/1500px/{$villa['img_slug_2']}.jpg' />
+                            <img data-idx='2' src='assets/villas/$slug/compressed/1500px/{$villa['img_slug_3']}.jpg' />
                             ";
                             ?>
                         </div>
