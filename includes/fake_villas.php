@@ -13,7 +13,9 @@ $villas = [
         'address' => "Nelson's Dockyard, St. Paul, Antigua & Barbuda",
         'address_link' => 'https://www.google.com/maps/place/Villa+Ordnance/@17.0122616,-61.7670372,18z/data=!4m9!3m8!1s0x8c12eb4233fdcaed:0xe647b8550fe6d978!5m2!4m1!1i2!8m2!3d17.0123163!4d-61.7656349!16s%2Fg%2F11t80h0r5x?entry=ttu',
         'policies' => 'Set in English Harbour Town, Villa Ordnance offers accommodation with private pool, free WiFi and free private parking for guests who drive.<br>The air-conditioned accommodation is 1.3 km from Pigeon Point Beach. Guests can make use of a garden.<br>The apartment is fitted with 4 bedrooms, 4 bathrooms, bed linen, towels, a flat-screen TV, a fully equipped kitchen, and a balcony with garden views.<br>Windward Bay Beach is 1.9 km from the apartment, while Galleon Beach is 2.2 km away. The nearest airport is V. C. Bird International Airport, 19 km from Villa Ordnance.<br>A 50% deposit is required at least one week after booking or the booking will be cancelled. The remaining 50% must be made a week before arrival or upon arrival before checking in at the villa.',
-        'img_slug_1' => 'aerial-1'
+        'img_slug_1' => 'aerial-1',
+        'img_slug_2' => 'aerial-2',
+        'img_slug_3' => 'aerial-3',
     ],
     'Casa Chiesa' => [
         'id' => 2,
