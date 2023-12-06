@@ -185,10 +185,11 @@ header nav {
 }
 header .logo { margin: 10px 0 3px; }
 header nav a { margin-left: 30px; color: var(--white); }
-header nav a.dropdown-item { margin: 0; }
+header nav a.dropdown-item { margin: 0; padding: 10px 15px; text-align: center; }
 header nav a span { position: relative; top: 65%; }
 header nav a.current{ opacity: 1 }
-header nav a.current span { border-bottom: 1px solid #FFF }
+header nav a.current span,
+.villa-toggle.current { border-bottom: 1px solid #FFF }
 header svg {
     width: 28px;
     height: auto;
@@ -210,10 +211,6 @@ header #mobile-menu {
 }
 .custom-dropdown span:hover {
     opacity: 0.5;
-}
-.dropdown-content span.current {
-    text-decoration: underline;
-    cursor: pointer;
 }
 .dropdown-content {
     display: flex;

@@ -34,7 +34,7 @@
                         </div>
                     <?php } ?>
                     <div class="custom-dropdown">
-                        <span class="villa-toggle">Villas</span>
+                        <span class="villa-toggle <?php if($page=='show') echo 'current' ?>">Villas</span>
                         <div class="dropdown-content hidden">
                             <?php if ($prod) {
                                 $villas_query = "SELECT name FROM villas;";
@@ -45,11 +45,11 @@
 
                                 foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'>{$v['name']}</a>";
                             } else { ?>
-                                <a class='dropdown-item' href='show.php?villa=Villa Ordnance'>Villa Ordnance</a>
-                                <a class='dropdown-item' href='show.php?villa=Casa Chiesa'>Casa Chiesa</a>
-                                <a class='dropdown-item' href='show.php?villa=Little Rock Cottage'>Little Rock Cottage</a>
-                                <a class='dropdown-item' href='show.php?villa=Goat Hill Studio'>Goat Hill Studio</a>
-                                <a class='dropdown-item' href='show.php?villa=Goat Rock Studio'>Goat Rock Studio</a>
+                                <a class='dropdown-item <?php echo $_GET['villa'] === 'Villa Ordnance' ? 'current' : ''; ?>' href='show.php?villa=Villa Ordnance'><span>Villa Ordnance</span></a>
+                                <a class='dropdown-item <?php echo $_GET['villa'] === 'Casa Chiesa' ? 'current' : ''; ?>' href='show.php?villa=Casa Chiesa'><span>Casa Chiesa</span></a>
+                                <a class='dropdown-item <?php echo $_GET['villa'] === 'Little Rock Cottage' ? 'current' : ''; ?>' href='show.php?villa=Little Rock Cottage'><span>Little Rock Cottage</span></a>
+                                <a class='dropdown-item <?php echo $_GET['villa'] === 'Goat Hill Studio' ? 'current' : ''; ?>' href='show.php?villa=Goat Hill Studio'><span>Goat Hill Studio</span></a>
+                                <a class='dropdown-item <?php echo $_GET['villa'] === 'Goat Rock Studio' ? 'current' : ''; ?>' href='show.php?villa=Goat Rock Studio'><span>Goat Rock Studio</span></a>
                             <?php } ?>
                         </div>
                     </div>
