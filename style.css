@@ -170,13 +170,13 @@ header .section-inner-wrap {
 }
 footer .logo-link {
     width: max-content;
-    margin: auto;
+    margin: 0 auto 20px;
 }
-.logo-link img {
-    width: 100px;
+header .logo-link img {
+    width: 75px;
 }
 footer .logo-link img {
-    width: 150px;
+    width: 120px;
 }
 header nav {
     height: 100%;
@@ -1123,7 +1123,7 @@ html.viewing-ammenities {
         opacity: 1 !important;
 	}
     header .logo-link img {
-        width: 75px;
+        width: 50px;
     }
 	header nav:not(#mobile-nav) {
         display: none;
