@@ -13,34 +13,18 @@ if ($prod) {
     include_once 'includes/fake_villas.php';
 }
 ?>
-    <div class="slideshow-container">
-        <?php
-            $villa_dir_str = "assets/villas/";
-            $asset_directory_contents = scandir($villa_dir_str);
-            
-            $rendered_first_img = false;
-
-            foreach($asset_directory_contents as $idx => $slug) {
-                if ($slug[0] == '.') continue;
-                $villa_directory_files = scandir("$villa_dir_str$slug/compressed/1500px/");
-    
-                $img_count = 0;
-                foreach($villa_directory_files as $idx => $file) {
-                    if ($file[0] == '.') continue;
-                    $img_count++;
-                    $active = $rendered_first_img ? '' : 'active';
-                    
-                    echo "<div style=\"background-image: url('$villa_dir_str$slug/compressed/3000px/$file');\" class=\"slide $active\"></div>";
-
-                    if (count($img_src_arr) >= 6) break;
-                    $rendered_first_img = true;
-                }
-            }
-        ?>
+    <div id="video-container">
+        <div id="video-intro">
+            <h1>Titi Vacation Homes</h1>
+            <p>Discover the charm of Antigua's southern hideaways with "Titi Vacation Homes," your gateway to an authentic Caribbean experience. Our collection features five cozy villas, nestled in the laid-back ambiance of Falmouth, Picadilly, and English Harbour.</p>
+        </div>
+        <div id="intro-overlay"></div>
+        <video autoplay loop playsinline muted>
+            <source src="/assets/videos/intro-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <div id="villas">
-        <h1>Titi Vacation Homes</h1>
-        <p>Discover the charm of Antigua's southern hideaways with "Titi Vacation Homes," your gateway to an authentic Caribbean experience. Our collection features five cozy villas, nestled in the laid-back ambiance of Falmouth, Picadilly, and English Harbour.</p>
         <div id="villas-container">
             <?php
             foreach($villas as $slug => $villa) {
