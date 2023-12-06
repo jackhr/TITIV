@@ -5,7 +5,7 @@
         </a>
         <p>Falmouth Harbour<br>St Paul's, Antigua</p>
         <p>Mon-Sat: 08:00 - 17:00 &nbsp; &bull; &nbsp; Sunday: 08:00 - 13:00</p>
-        <p class="tel">+1 (268) 460-1452 &nbsp; &bull; &nbsp; VHF #68 &nbsp; &bull; &nbsp; <a href="mailto:titi@candw.ag">titi@candw.ag</a></p>
+        <p class="tel"><a href="tel:+1 (268) 764-6860">+1 (268) 764-6860</a> &nbsp; &bull; &nbsp; VHF #68 &nbsp; &bull; &nbsp; <a href="mailto:titirentals268@gmail.com">titirentals268@gmail.com</a></p>
         <nav>
             <div class="custom-dropdown">
                 <span class="villa-toggle">Villas</span>
