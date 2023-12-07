@@ -10,7 +10,8 @@
 
 :root {
 	--white: #FAFAFA;
-	--red: #E72D3A;
+    --red: #E72D3A;
+	--blue: #146b93;
 	--grey: #333;
 	--font-body: 'Poppins';
 	--font-header: 'Poppins';
@@ -28,7 +29,7 @@ body { font: 11pt var(--font-body); color: #333; }
 
 p { max-width: 750px; margin: 0 auto 10px; padding: 5px 0 10px; line-height: 1.3em; text-align: center; }
 
-a { text-decoration: none; color: var(--red); }
+a { text-decoration: none; color: var(--blue); }
 a:hover { opacity: 0.5 }
 a img { outline: none; border: none; }
 
@@ -51,13 +52,13 @@ hgroup h3 { padding: 10px 0 }
 .green { color: #1CB246 }
 
 .button { display: inline-block; padding: 8px 20px 10px;
-	color: var(--white); border: 2px solid var(--red);
-	background: var(--red);
+	color: var(--white); border: 2px solid var(--blue);
+	background: var(--blue);
 	border-radius: 50px;
 }
-.button:hover { opacity: 1; background: var(--white); color: var(--red); }
+.button:hover { opacity: 1; background: var(--white); color: var(--blue); }
 .button.invert { color: var(--white); border-color: var(--white); }
-.button.invert:hover { color: var(--red); background: var(--white); }
+.button.invert:hover { color: var(--blue); background: var(--white); }
 
 .button, nav a, label, h1, h2, h3, h4, h5, h6, .vehicle-select-car, .custom-dropdown { font-family: var(--font-header), sans-serif }
 a, a img, i, button, header, header nav a span, .vehicle-select-car, .vehicle-select-car table td img, section.rental-form-section hgroup, .rental-form-section-content, section.rental-form-section, .custom-dropdown span { -webkit-transition: all 240ms; -moz-transition: all 240ms; -ms-transition: all 240ms; -o-transition: all 240ms; transition: all 240ms; }
@@ -151,7 +152,7 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: var(--red);
+    background: var(--blue);
     height: var(--nav-height);
     display: flex;
     align-items: center;
@@ -182,21 +183,32 @@ header nav {
     height: 100%;
     display: flex;
     align-items: center;
+    color: var(--white);
+    gap: 0 15px;
 }
-header nav a { margin-left: 30px; color: var(--white); }
+header nav a { color: var(--white); }
 header nav a.dropdown-item { margin: 0; padding: 10px 15px; text-align: center; }
 header nav a span { position: relative; top: 65%; }
 header nav a.current{ opacity: 1 }
-header nav a.current span,
-.villa-toggle.current { border-bottom: 1px solid #FFF }
+
+header nav:not(#mobile-nav) a.current span,
+nav:not(#mobile-nav) .villa-toggle.current {
+    border-bottom: 1px solid #FFF;
+}
+.villa-toggle { margin: 10px 15px; }
 header svg {
     width: 28px;
     height: auto;
+    color: var(--grey);
 }
 
 header #mobile-menu {
     display: none;
     cursor: pointer;
+}
+
+#mobile-nav .nav-pipe {
+    display: none;
 }
 
 .custom-dropdown {
@@ -216,7 +228,7 @@ header #mobile-menu {
     flex-direction: column;
     position: absolute;
     width: max-content;
-    background-color: var(--red);
+    background-color: var(--blue);
     padding: 8px;
     border-radius: 6px;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -416,7 +428,7 @@ section.rental-form-section.details .rental-form-pickuploc-details { display: no
 
 footer {
 	position: relative;
-	background: var(--red);
+	background: var(--blue);
 	text-align: center;
 	padding: 30px 0 20px;
 	color: var(--white);
@@ -450,14 +462,6 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     z-index: 10;
     margin: 0 24px;
 }
-#video-intro h1 {
-    font-size: 4.2em;
-}
-#video-intro p {
-    font-size: 13pt;
-    line-height: 1.6;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
 #intro-overlay {
     position: absolute;
     width: 100%;
@@ -466,15 +470,16 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 }
 
 #villas {
-    padding: 90px 32px 0;
+    padding: 60px 32px 0;
     background-color: var(--white);
 }
 #villas > h1 {
-    margin-bottom: 45px;
+    font-size: 4.2em;
 }
 #villas > p {
     margin-bottom: 50px;
     font-size: 13pt;
+    line-height: 1.6;
 }
 #villas-container {
     display: flex;
@@ -562,7 +567,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     position: relative;
 }
 .main-btn {
-    background: var(--red);
+    background: var(--blue);
     border-radius: 6px;
     color: var(--white);
     display: flex;
@@ -649,7 +654,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
     border-radius: 4px;
 }
 #show-carousel-container .villa-img-arrow {
-    background: var(--red);
+    background: var(--blue);
     color: var(--white);
 }
 .show-carousel-img {
@@ -708,7 +713,7 @@ footer .copyright { padding: 0 0 0 0; opacity: 0.5; }
 }
 .all-ammenities {
     width: max-content;
-    background: var(--red);
+    background: var(--blue);
     color: var(--white);
     border-radius: 6px;
     padding: 12px 24px;
@@ -881,7 +886,7 @@ html.viewing #image-gallery .gallery-img-container.active {
     cursor: pointer;
 }
 .sub-header-container .villa-icon-pair span {
-    color: var(--red);
+    color: var(--blue);
 }
 .modal {
     position: fixed;
@@ -934,7 +939,7 @@ html.viewing #image-gallery .gallery-img-container.active {
     width: max-content;
 }
 .modal-header span {
-    color: var(--red);
+    color: var(--blue);
 }
 .modal-body {
     display: flex;
@@ -956,7 +961,7 @@ html.viewing-ammenities {
 }
 .ammenities.modal .modal-header {
     justify-content: center;
-    color: var(--red);
+    color: var(--blue);
     border-bottom: solid 2px rgba(0, 0, 0, 0.1);
     width: 100%;
     padding: 26px 0;
@@ -1028,7 +1033,7 @@ html.viewing-ammenities {
     gap: 58px;
 }
 .book-now a {
-    background: var(--red);
+    background: var(--blue);
     color: var(--white) !important;
 }
 .book-now a.airbnb img {
@@ -1060,7 +1065,7 @@ html.viewing-ammenities {
     left: 0;
     top: 0;
     height: calc(100vh - (48px*2));
-    background: var(--red);
+    background: var(--blue);
     z-index: 2000;
     flex-direction: column;
     padding: 48px;
@@ -1082,10 +1087,10 @@ html.viewing-ammenities {
         padding: 60px 24px 0;
     }
 
-    #video-intro h1 {
+    #villas h1 {
         font-size: 3.5em;
     }
-    #video-intro p {
+    #villas p {
         font-size: 11pt;
     }
     
@@ -1100,7 +1105,7 @@ html.viewing-ammenities {
         --nav-height: 80px;
     }
 
-    #video-intro h1 {
+    #villas h1 {
         font-size: 3em;
     }
 
@@ -1332,10 +1337,24 @@ html.viewing-ammenities {
 	}
 	footer nav a:last-child { border-bottom: none }
 
+    footer .nav-pipe {
+        display: none;
+    }
+
     .custom-dropdown {
         border-bottom: 1px solid #ffffff80;
         width: calc(100% - 30px);
         padding: 10px 15px;
+    }
+
+    header .custom-dropdown {
+        width: calc(100% + 15px);
+    }
+
+    footer .custom-dropdown {
+        padding: unset;
+        width: 100%;
+        font-size: inherit;
     }
 
 }

@@ -33,6 +33,8 @@
                             </svg>
                         </div>
                     <?php } ?>
+                    <a class="<?php if($page=='index') echo 'current' ?>" href="index.php"><span>Home</span></a>
+                    <span class="nav-pipe">|</span>
                     <div class="custom-dropdown">
                         <span class="villa-toggle <?php if($page=='show') echo 'current' ?>">Villas</span>
                         <div class="dropdown-content hidden">
@@ -53,8 +55,11 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="nav-pipe">|</span>
                     <a class="<?php if($page=='information') echo 'current' ?>" href="faq.php"><span>Info & FAQ</span></a>
+                    <span class="nav-pipe">|</span>
                     <a target="_blank" href="http://www.titirentacarantigua.com/"><span>Car Rentals<span></a>
+                    <span class="nav-pipe">|</span>
                     <a class="<?php if($page=='contact') echo 'current' ?>" href="contact.php"><span>Contact<span></a>
                 </nav>
             <?php } ?>
