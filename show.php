@@ -2,8 +2,7 @@
 $villa = $_GET['villa'];
 $title = "Titi Vacation Homes - $villa";
 $page = "show";
-include_once 'includes/header.php';
-include_once 'includes/lookups.php';
+include 'includes/connection.php';
 
 if ($prod) {
     $villa_query = "SELECT * FROM villas WHERE name = '$villa';";
@@ -63,6 +62,11 @@ foreach($villa_directory_files as $idx => $file) {
 }
 
 $link = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+mysqli_close($con);
+
+$description = $villa['description'];
+include 'includes/header.php';
+include_once 'includes/lookups.php';
 
 ?>
 
