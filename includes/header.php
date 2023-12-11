@@ -1,11 +1,19 @@
-<?php include_once 'connection.php'; ?>
+<?php
+include 'connection.php';
+$description = isset($description) ? $description : "Explore the charm of Antigua's southern hideaways with Titi Vacation Homes. Immerse yourself in a personal Caribbean experience through our collection of five cozy villas nestled in the laid-back ambiance of Falmouth, Picadilly, and English Harbour. Your gateway to relaxation and tranquility awaits.";
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-	<meta name="description" content="<?php echo $description ?>">
 	<meta name="robots" content="noindex">
+    <meta name="keywords" content="villa rentals, luxury villas, vacation homes, holiday rentals, travel, caribbean rentals, antigua, antigua and barbuda, antigua rentals, titi-rent-a-car, titi">
+	<meta name="description" content="<?php echo $description ?>">
+    <meta property="og:title" content="Titi Vacation Homes">
+    <meta property="og:description" content="<?php echo $description; ?>">
+    <meta property="og:image" content="https://titivacationhomes.com/assets/villas/Villa_Ordnance/compressed/1500px/aerial-1.jpg">
+    <meta property="og:url" content="https://titivacationhomes.com">
 	<title><?php echo $title ?></title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
