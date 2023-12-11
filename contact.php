@@ -1,5 +1,5 @@
 <?php $page = 'contact'; ?>
-<?php $title = 'Contact Titi Vacation Rentals Antigua'; ?>
+<?php $title = 'Contact Titi Vacation Homes'; ?>
 <?php $description = 'Send us an email, call our office, or radio us on VHF #68.'; ?>
 <?php include_once 'includes/header.php'; ?>
 
