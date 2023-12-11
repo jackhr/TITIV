@@ -1,7 +1,9 @@
-<?php $page = 'information'; ?>
-<?php $title = 'General Information Titi Rent-a-Car Antigua'; ?>
-<?php $description = ''; ?>
-<?php include_once 'includes/header.php'; ?>
+<?php
+$page = 'information';
+$title = 'General Information Titi Vacation Homes';
+$description = 'Frequently Asked Questions about Titi Vacation Homes.';
+include_once 'includes/header.php';
+?>
 
 	<section class="masthead background-img">
 		<div class="section-inner-wrap">
