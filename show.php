@@ -9,7 +9,7 @@ if ($prod) {
     $result = mysqli_query($con, $villa_query);
     $villa = mysqli_fetch_assoc($result);
     
-    $minimum_stays_query = "SELECT * FROM minimum_stays WHERE villa_id = {$villa['id']};";
+    $minimum_stays_query = "SELECT * FROM minimum_stays WHERE villa_id = {$villa['id']} ORDER BY date_order ASC;";
     $result = mysqli_query($con, $minimum_stays_query);
     while($row = mysqli_fetch_assoc($result)) $villa['minimum_stays'][] = $row;
 
@@ -177,13 +177,9 @@ include_once 'includes/lookups.php';
         <div class="details-separator"></div>
         <h2 id="test">Book Now</h2>
         <div class="book-now">
-            <a target="_blank" href="<?php echo $villa['booking_dot_com_link']; ?>" class="booking-btn booking-dot-com">
-                <img src="https://iconape.com/wp-content/png_logo_vector/booking-com.png" alt="Booking.com logo">
-                <span>Booking.com</span>
-            </a>
-            <a target="_blank" href="<?php echo $villa['air_bnb_link']; ?>" class="booking-btn airbnb">
-                <img src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" alt="Airbnb logo">
-                <span>Airbnb</span>
+            <a target="_blank" href="https://direct-book.com/properties/TitiVacationHomesdirect" class="booking-btn">
+                <img src="assets/icons/little-hotelier.png" alt="Little Hotelier logo">
+                <span>Little Hotelier</span>
             </a>
         </div>
         <div class="details-separator"></div>
