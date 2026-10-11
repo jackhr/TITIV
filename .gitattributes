@@ -522,3 +522,4 @@ archived/Villa_Ordnance/original/veranda-2.jpg filter=lfs diff=lfs merge=lfs -te
 assets/villas/Goat_Rock_Studio/compressed/1500px/pool-4.jpg filter=lfs diff=lfs merge=lfs -text
 assets/villas/Goat_Rock_Studio/compressed/2000px/pool-4.jpg filter=lfs diff=lfs merge=lfs -text
 assets/villas/Goat_Rock_Studio/compressed/3000px/pool-4.jpg filter=lfs diff=lfs merge=lfs -text
+assets/villas/Little_Rock_Cottage/original/pool-4.jpg filter=lfs diff=lfs merge=lfs -text
