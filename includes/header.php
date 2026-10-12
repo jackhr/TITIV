@@ -12,7 +12,7 @@ $description = isset($description) ? $description : "Explore the charm of Antigu
 	<meta name="description" content="<?php echo $description ?>">
     <meta property="og:title" content="Titi Vacation Homes">
     <meta property="og:description" content="<?php echo $description; ?>">
-    <meta property="og:image" content="https://titivacationhomes.com/assets/villas/Villa_Ordnance/compressed/1500px/aerial-1.jpg">
+    <meta property="og:image" content="https://titivacationhomes.com/assets/villas/Villa_Ordnance/compressed/1500px/AIR02-TITI-VillaOrdnance-Air1-2609JMR63954.jpg">
     <meta property="og:url" content="https://titivacationhomes.com">
 	<title><?php echo $title ?></title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
