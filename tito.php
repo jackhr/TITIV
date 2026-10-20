@@ -26,12 +26,25 @@ include_once 'includes/header.php';
             <h2>Antigua looks better from here.</h2>
             <p>Step aboard TITO 2, a sleek 45-foot Sea Ray built for unhurried days along Antigua's coastline and beyond. Settle into the sun, swim in clear coves, and let the crew shape the day around you.</p>
         </div>
-        <div class="tito-specs" aria-label="Yacht details">
-            <div><strong>45 ft</strong><span>Sea Ray</span></div>
-            <div><strong>2</strong><span>Bedrooms</span></div>
-            <div><strong>2</strong><span>Bathrooms</span></div>
-            <div><strong>420</strong><span>Twin diesel engines</span></div>
+        <div class="tito-specs" aria-label="TITO 2 yacht specifications">
+            <div class="tito-specs-heading">
+                <span>THE VESSEL</span>
+                <h3>Details at a glance</h3>
+            </div>
+            <div class="tito-specs-grid">
+                <div class="tito-spec-item"><strong>45 <small>ft</small></strong><span>Sea Ray Sundancer</span></div>
+                <div class="tito-spec-item"><strong>2005</strong><span>Classic cruiser</span></div>
+                <div class="tito-spec-item"><strong>2</strong><span>Bedrooms</span></div>
+                <div class="tito-spec-item"><strong>2</strong><span>Bathrooms</span></div>
+            </div>
+            <p class="tito-specs-engine">Twin inboard 420 Sundancer engines</p>
         </div>
+    </section>
+
+    <section class="tito-gallery tito-gallery--reverse" aria-label="Guests enjoying a TITO 2 charter">
+        <img src="assets/tito/tito-gallery-air126.jpg" alt="Aerial view of TITO 2 cruising in Antigua" loading="lazy">
+        <img src="assets/tito/tito-interior.jpg" alt="Interior lounge aboard TITO 2" loading="lazy">
+        <img src="assets/tito/tito-gallery-ext120.jpg" alt="TITO 2 at anchor in Antigua" loading="lazy">
     </section>
 
     <section class="tito-charters">
@@ -51,7 +64,7 @@ include_once 'includes/header.php';
     <section class="tito-gallery" aria-label="TITO 2 yacht photographs">
         <img src="assets/tito/tito-underway.jpg" alt="TITO 2 cruising along Antigua's coastline" loading="lazy">
         <img src="assets/tito/tito-anchor.jpg" alt="TITO 2 anchored in clear Caribbean water" loading="lazy">
-        <img src="assets/tito/tito-interior.jpg" alt="Comfortable interior aboard TITO 2" loading="lazy">
+        <img src="assets/tito/tito-gallery-cabin.jpg" alt="Interior cabin aboard TITO 2" loading="lazy">
     </section>
 
     <section class="tito-contact">
