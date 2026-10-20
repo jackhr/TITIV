@@ -7,7 +7,6 @@ $description = isset($description) ? $description : "Explore the charm of Antigu
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-	<meta name="robots" content="noindex">
     <meta name="keywords" content="villa rentals, luxury villas, vacation homes, holiday rentals, travel, caribbean rentals, antigua, antigua and barbuda, antigua rentals, titi-rent-a-car, titi">
 	<meta name="description" content="<?php echo $description ?>">
     <meta property="og:title" content="Titi Vacation Homes">
