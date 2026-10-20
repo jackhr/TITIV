@@ -1533,7 +1533,7 @@ html.viewing-ammenities {
     .tito-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 170px; }
     .tito-gallery img:first-child { grid-column: span 2; grid-row: auto; }
     .tito-gallery--reverse img:first-child { grid-column: span 2; grid-row: auto; }
-    .tito-gallery--reverse img:not(:first-child) { grid-column: auto; }
+    .tito-gallery--reverse img:not(:first-child) { grid-column: auto; grid-row: 2; }
     .tito-contact { padding: 72px 7%; }
 }
 
