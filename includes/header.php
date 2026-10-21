@@ -53,7 +53,7 @@ $description = isset($description) ? $description : "Explore the charm of Antigu
                                 
                                 while($v = mysqli_fetch_assoc($result)) $villas[] = $v;
 
-                                foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'>{$v['name']}</a>";
+                                foreach($villas as $v) echo "<a class='dropdown-item' href='show.php?villa={$v['name']}'><span>{$v['name']}</span></a>";
                             } else { ?>
                                 <a class='dropdown-item <?php echo ($_GET['villa'] ?? '') === 'Villa Ordnance' ? 'current' : ''; ?>' href='show.php?villa=Villa Ordnance'><span>Villa Ordnance</span></a>
                                 <a class='dropdown-item <?php echo ($_GET['villa'] ?? '') === 'Casa Chiesa' ? 'current' : ''; ?>' href='show.php?villa=Casa Chiesa'><span>Casa Chiesa</span></a>
