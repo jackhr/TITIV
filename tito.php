@@ -56,12 +56,42 @@ include_once 'includes/header.php';
             <h2>Time well spent at sea.</h2>
         </div>
         <div class="tito-charter-list">
-            <article><span>01</span><div><h3>Four-hour charter</h3><p>A half-day on the water with drinks, light bites, towels, and snorkeling gear.</p></div></article>
-            <article><span>02</span><div><h3>Six-hour charter</h3><p>More time to swim, snorkel, and explore, with drinks, snacks, and a freshly prepared meal.</p></div></article>
-            <article><span>03</span><div><h3>Sunset cruise</h3><p>Golden-hour views, complimentary drinks, and light bites along Antigua's coast.</p></div></article>
-            <article><span>04</span><div><h3>Barbuda lunch cruise</h3><p>A full-day escape to Barbuda, with refreshments aboard and lunch on the island.</p></div></article>
-            <article><span>05</span><div><h3>Private charters to other Caribbean islands</h3><p>Create a private island-hopping itinerary beyond Antigua, planned around you.</p></div></article>
-            <article><span>06</span><div><h3>Private overnight cruise</h3><p>Stay aboard overnight and fall asleep beneath the Caribbean stars.</p></div></article>
+            <article><span>01</span>
+                <div>
+                    <h3>Four-hour charter</h3>
+                    <p>A half-day on the water with drinks, light bites, towels, and snorkeling gear.</p>
+                </div>
+            </article>
+            <article><span>02</span>
+                <div>
+                    <h3>Six-hour charter</h3>
+                    <p>More time to swim, snorkel, and explore, with drinks, snacks, and a freshly prepared meal.</p>
+                </div>
+            </article>
+            <article><span>03</span>
+                <div>
+                    <h3>Sunset cruise</h3>
+                    <p>Golden-hour views, complimentary drinks, and light bites along Antigua's coast.</p>
+                </div>
+            </article>
+            <article><span>04</span>
+                <div>
+                    <h3>Barbuda lunch cruise</h3>
+                    <p>A full-day escape to Barbuda, with refreshments aboard and lunch on the island.</p>
+                </div>
+            </article>
+            <article><span>05</span>
+                <div>
+                    <h3>Private charters to other Caribbean islands</h3>
+                    <p>Create a private island-hopping itinerary beyond Antigua, planned around you.</p>
+                </div>
+            </article>
+            <article><span>06</span>
+                <div>
+                    <h3>Private overnight cruise</h3>
+                    <p>Stay aboard overnight and fall asleep beneath the Caribbean stars.</p>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -72,10 +102,10 @@ include_once 'includes/header.php';
     </section>
 
     <section class="tito-strip" aria-label="More photographs of TITO 2">
-        <img src="assets/tito/tito-anchor-beach.jpg" alt="TITO 2 anchored off a beach in Antigua" loading="lazy">
-        <img src="assets/tito/tito-anchor-bow.jpg" alt="TITO 2 at anchor in turquoise water" loading="lazy">
-        <img src="assets/tito/tito-galley.jpg" alt="Galley kitchen aboard TITO 2" loading="lazy">
         <img src="assets/tito/tito-guest-cabin.jpg" alt="Guest cabin aboard TITO 2" loading="lazy">
+        <img src="assets/tito/tito-anchor-beach.jpg" alt="TITO 2 anchored off a beach in Antigua" loading="lazy">
+        <img src="assets/tito/tito-galley.jpg" alt="Galley kitchen aboard TITO 2" loading="lazy">
+        <img src="assets/tito/tito-anchor-bow.jpg" alt="TITO 2 at anchor in turquoise water" loading="lazy">
     </section>
 
     <section class="tito-contact">
