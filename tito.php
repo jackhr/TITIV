@@ -12,19 +12,21 @@ include_once 'includes/header.php';
         </video>
         <div class="tito-hero-shade"></div>
         <div class="tito-hero-copy">
-            <p class="tito-eyebrow">Antigua, West Indies</p>
+            <p class="tito-eyebrow">Antigua &amp; Barbuda &middot; Private Yacht Charters</p>
             <h1>TITO 2</h1>
-            <p class="tito-hero-subtitle">A day on the water, made yours.</p>
-            <a class="tito-button" href="mailto:titirentals268@gmail.com?subject=TITO%202%20Charter%20Enquiry">Plan your charter</a>
+            <p class="tito-hero-subtitle">Sail Beyond Ordinary. Experience Extraordinary.</p>
+            <p class="tito-hero-text">Discover Antigua's turquoise waters and hidden coves aboard TITO 2, your private luxury escape.</p>
+            <a class="tito-button" href="mailto:titirentals268@gmail.com?subject=TITO%202%20Charter%20Enquiry">Reserve your private charter</a>
         </div>
-        <div class="tito-hero-caption">45 ft Sea Ray &nbsp; / &nbsp; Private charters</div>
+        <div class="tito-hero-caption">45-ft Sea Ray Sundancer &nbsp; / &nbsp; Exclusive private charters</div>
     </section>
 
     <section class="tito-intro">
         <div class="tito-intro-copy">
-            <p class="tito-eyebrow">Meet your boat</p>
-            <h2>Antigua looks better from here.</h2>
-            <p>Step aboard TITO 2, a sleek 45-foot Sea Ray built for unhurried days along Antigua's coastline and beyond. Settle into the sun, swim in clear coves, and let the crew shape the day around you.</p>
+            <p class="tito-eyebrow">Meet TITO 2</p>
+            <h2>Sail Beyond Ordinary. Experience Extraordinary.</h2>
+            <p>Step aboard TITO 2, a 45-foot Sea Ray Sundancer designed for unforgettable days on the Caribbean Sea. Cruise along Antigua's stunning coastline, discover secluded coves, dive into crystal-clear waters, and soak up the sunshine in comfort and style.</p>
+            <p>Whether you're seeking a peaceful escape or a day of adventure, let TITO 2 turn your time on the water into an experience worth remembering.</p>
         </div>
         <div class="tito-specs" aria-label="TITO 2 yacht specifications">
             <div class="tito-specs-heading">
@@ -57,7 +59,8 @@ include_once 'includes/header.php';
             <article><span>02</span><div><h3>Six-hour charter</h3><p>More time to swim, snorkel, and explore, with drinks, snacks, and a freshly prepared meal.</p></div></article>
             <article><span>03</span><div><h3>Sunset cruise</h3><p>Golden-hour views, complimentary drinks, and light bites along Antigua's coast.</p></div></article>
             <article><span>04</span><div><h3>Barbuda lunch cruise</h3><p>A full-day escape to Barbuda, with refreshments aboard and lunch on the island.</p></div></article>
-            <article><span>05</span><div><h3>Overnight & private charters</h3><p>Stay aboard beneath the stars or create a private island itinerary around your plans.</p></div></article>
+            <article><span>05</span><div><h3>Private charters to other Caribbean islands</h3><p>Create a private island-hopping itinerary beyond Antigua, planned around you.</p></div></article>
+            <article><span>06</span><div><h3>Private overnight cruise</h3><p>Stay aboard overnight and fall asleep beneath the Caribbean stars.</p></div></article>
         </div>
     </section>
 
@@ -68,13 +71,14 @@ include_once 'includes/header.php';
     </section>
 
     <section class="tito-contact">
-        <p class="tito-eyebrow">Your day starts here</p>
-        <h2>Let's get you out on the water.</h2>
-        <p>Tell us what you have in mind and we'll help plan your TITO 2 charter.</p>
+        <p class="tito-eyebrow">Your day on the water starts here</p>
+        <h2>Your Private Caribbean Escape Awaits.</h2>
+        <p>From secluded Caribbean coves to unforgettable days cruising Antigua's turquoise waters, your private TITO 2 experience begins with a vision. Tell us what you have in mind, and let our charter team help bring your perfect day at sea to life.</p>
         <div class="tito-contact-actions">
-            <a class="tito-button" href="mailto:titirentals268@gmail.com?subject=TITO%202%20Charter%20Enquiry">Email the charter team</a>
-            <a class="tito-phone" href="tel:+12684646419">+1 268 464 6419</a>
+            <a class="tito-button" href="mailto:titirentals268@gmail.com?subject=TITO%202%20Charter%20Enquiry">Reserve your private charter</a>
         </div>
+        <p>Contact our charter team at <a class="tito-phone" href="tel:+12684646419">+1 268 464 6419</a> to begin planning your escape.</p>
+        <p class="tito-brochure-intro">Discover your possibilities in our charter brochure.</p>
         <a class="tito-brochure" href="assets/tito/tito-2-charter-brochure.pdf" target="_blank" rel="noopener">View the charter brochure (PDF)</a>
     </section>
 </main>
