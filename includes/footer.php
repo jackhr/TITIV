@@ -30,11 +30,11 @@
                 </div>
             </div>
             <span class="nav-pipe">|</span>
-            <a class="<?php if($page=='information') echo 'current' ?>" href="faq.php"><span>Info & FAQ</span></a>
+            <a class="<?php if($page=='tito') echo 'current' ?>" href="tito.php"><span>TITO 2 Charters</span></a>
             <span class="nav-pipe">|</span>
             <a target="_blank" href="http://www.titirentacarantigua.com"><span>Car Rentals</span></a>
             <span class="nav-pipe">|</span>
-            <a class="<?php if($page=='tito') echo 'current' ?>" href="tito.php"><span>TITO Charters</span></a>
+            <a class="<?php if($page=='information') echo 'current' ?>" href="faq.php"><span>Info & FAQ</span></a>
             <span class="nav-pipe">|</span>
             <a class="<?php if($page=='contact') echo 'current' ?>" href="contact.php"><span>Contact</span></a>
         </nav>

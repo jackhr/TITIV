@@ -1653,10 +1653,13 @@ section.background-solid {
 .tito-gallery--reverse img:first-child { grid-column: 2; grid-row: 1 / span 2; }
 .tito-gallery--reverse img:nth-child(2) { grid-column: 1; grid-row: 1; }
 .tito-gallery--reverse img:nth-child(3) { grid-column: 1; grid-row: 2; }
+.tito-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 0 8px 8px; background: var(--white); }
+.tito-strip img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .tito-contact { padding: 100px 24px; text-align: center; }
 .tito-contact .tito-eyebrow { margin: 0 auto 16px; text-align: center; }
 .tito-contact h2 { text-align: center !important; }
 .tito-intro-copy > p:not(.tito-eyebrow) + p { margin-top: 16px; }
+.tito-logo { display: block; width: 220px; height: auto; margin: 0 0 28px; }
 .tito-contact > p:not(.tito-eyebrow) { max-width: 640px; margin: 0 auto; text-align: center; }
 .tito-contact > p.tito-brochure-intro { margin-top: 28px; }
 .tito-contact-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 22px; margin: 28px 0 22px; }
@@ -1681,8 +1684,92 @@ section.background-solid {
     .tito-gallery img:first-child { grid-column: span 2; grid-row: auto; }
     .tito-gallery--reverse img:first-child { grid-column: span 2; grid-row: auto; }
     .tito-gallery--reverse img:not(:first-child) { grid-column: auto; grid-row: 2; }
+    .tito-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tito-logo { width: 180px; }
     .tito-contact { padding: 72px 7%; }
 }
 
 
   
+/* ========== Dark green theme ========== */
+/* Site-wide dark green background; every link uses the light yellow. */
+:root {
+    --surface: #213f3b;
+    --line: rgba(245, 246, 241, .16);
+    --muted: #c0ceca;
+}
+
+body { color: var(--white); background: var(--grey); }
+a { color: var(--yellow); }
+a:hover { opacity: .85; }
+
+header { border-bottom: 1px solid var(--line); }
+footer { border-top: 1px solid var(--line); }
+header nav a,
+footer nav a,
+footer a,
+header .custom-dropdown,
+footer .custom-dropdown { color: var(--yellow); }
+header nav a.current span,
+footer nav a.current span,
+nav:not(#mobile-nav) .villa-toggle.current,
+header nav:not(#mobile-nav) a span:hover,
+header nav:not(#mobile-nav) .villa-toggle:hover { border-color: var(--white); }
+.dropdown-content { background: var(--surface); }
+
+/* Home */
+#index-page #villas { color: var(--white); background: var(--grey); }
+#index-page #villas > h1 { color: var(--white); }
+#index-page #villas > p { color: var(--muted); }
+#index-page .villa,
+#index-page .villa-title { background: var(--surface); }
+#index-page .villa { box-shadow: 0 12px 32px rgba(0, 0, 0, .25); }
+#index-page .main-btn.details { background: var(--surface); }
+
+/* FAQ & Contact */
+section.masthead { isolation: isolate; } /* keeps the ::before photo above the section background */
+section.background-solid { color: var(--white); background: var(--grey); }
+#information-page .features h2,
+#contact-page .features h2,
+#information-page .question h3 { color: var(--white); }
+#information-page .question { border-color: var(--line); }
+#information-page .question.showing { border-color: var(--yellow); }
+#information-page .question.showing h3 { color: var(--yellow); }
+#information-page .question p { color: var(--muted); }
+#contact-page section.contact.features h3 { color: var(--muted); }
+#contact-page section.contact.features a { color: var(--yellow); }
+
+/* Villa details */
+#show-page { color: var(--white); background: var(--grey); }
+#show-page #details h1,
+#show-page #details h2 { color: var(--white); }
+#show-page .details-separator { border-color: var(--line); }
+#show-page #details .pricing th { background: var(--surface); }
+#show-page #details .pricing td { border-color: var(--line); }
+#show-page #details .pricing tr:hover { background: var(--surface); }
+#show-page .all-ammenities { color: var(--grey); background: var(--yellow); }
+.sub-header-container .villa-icon-pair span { color: var(--yellow); }
+.book-now a { color: var(--grey) !important; background: var(--yellow); }
+#carousel-img-count,
+#current-img-num { color: var(--grey); }
+.modal-content { color: var(--white); background: var(--surface); }
+.modal-header span,
+.ammenities.modal .modal-header { color: var(--yellow); }
+.ammenities.modal .modal-header { border-color: var(--line); }
+.share-btn { background: var(--grey); }
+.share-btn:hover { color: var(--grey); background: var(--yellow); border-color: var(--yellow); }
+
+/* TITO 2 */
+#tito-page-content { color: var(--white); background: var(--grey); }
+#tito-page-content .tito-eyebrow { color: var(--yellow); }
+.tito-intro-copy > p:not(.tito-eyebrow),
+.tito-contact > p:not(.tito-eyebrow) { color: var(--muted); }
+.tito-logo { filter: brightness(0) invert(.96); }
+.tito-specs,
+.tito-charters { background: var(--surface); }
+.tito-gallery,
+.tito-strip { background: var(--grey); }
+.tito-contact-actions .tito-button { color: var(--grey); background: var(--yellow); }
+.tito-phone { color: var(--yellow); }
+.tito-brochure { color: var(--yellow); border-color: var(--yellow); }
+.tito-brochure:hover { color: var(--grey); background: var(--yellow); }

@@ -23,6 +23,7 @@ include_once 'includes/header.php';
 
     <section class="tito-intro">
         <div class="tito-intro-copy">
+            <img class="tito-logo" src="assets/tito/tito-2-logo.png" alt="TITO 2 Boat Charters" width="444" height="368">
             <p class="tito-eyebrow">Meet TITO 2</p>
             <h2>Sail Beyond Ordinary. Experience Extraordinary.</h2>
             <p>Step aboard TITO 2, a 45-foot Sea Ray Sundancer designed for unforgettable days on the Caribbean Sea. Cruise along Antigua's stunning coastline, discover secluded coves, dive into crystal-clear waters, and soak up the sunshine in comfort and style.</p>
@@ -68,6 +69,13 @@ include_once 'includes/header.php';
         <img src="assets/tito/tito-underway.jpg" alt="TITO 2 cruising along Antigua's coastline" loading="lazy">
         <img src="assets/tito/tito-anchor.jpg" alt="TITO 2 anchored in clear Caribbean water" loading="lazy">
         <img src="assets/tito/tito-gallery-cabin.jpg" alt="Interior cabin aboard TITO 2" loading="lazy">
+    </section>
+
+    <section class="tito-strip" aria-label="More photographs of TITO 2">
+        <img src="assets/tito/tito-anchor-beach.jpg" alt="TITO 2 anchored off a beach in Antigua" loading="lazy">
+        <img src="assets/tito/tito-anchor-bow.jpg" alt="TITO 2 at anchor in turquoise water" loading="lazy">
+        <img src="assets/tito/tito-galley.jpg" alt="Galley kitchen aboard TITO 2" loading="lazy">
+        <img src="assets/tito/tito-guest-cabin.jpg" alt="Guest cabin aboard TITO 2" loading="lazy">
     </section>
 
     <section class="tito-contact">
