@@ -23,7 +23,6 @@ include_once 'includes/header.php';
 
     <section class="tito-intro">
         <div class="tito-intro-copy">
-            <img class="tito-logo" src="assets/tito/tito-2-logo.png" alt="TITO 2 Boat Charters" width="444" height="368">
             <p class="tito-eyebrow">Meet TITO 2</p>
             <h2>Sail Beyond Ordinary. Experience Extraordinary.</h2>
             <p>Step aboard TITO 2, a 45-foot Sea Ray Sundancer designed for unforgettable days on the Caribbean Sea. Cruise along Antigua's stunning coastline, discover secluded coves, dive into crystal-clear waters, and soak up the sunshine in comfort and style.</p>

@@ -26,7 +26,11 @@ $description = isset($description) ? $description : "Explore the charm of Antigu
 	<header>
 		<div class="section-inner-wrap">
 			<a href="index.php" class="logo-link">
+                <?php if ($page == 'tito') { ?>
+                <img class="tito-nav-logo" src="/assets/tito/tito-2-logo-white.png" alt="TITO 2 Boat Charters">
+                <?php } else { ?>
                 <img src="/assets/logos/TITIV-NewLogo.png" alt="Logo">
+                <?php } ?>
             </a>
             <?php
             for($i = 0; $i < 2; $i++) {
